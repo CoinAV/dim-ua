@@ -189,18 +189,28 @@
     <!-- HTML-код сторінки -->
    <!-- Шапка сторінки -->
     <header>
-        <!-- Логотип сайту -->
-        <div class="logo">🏠 Dim-UA</div>
-        <!-- Пошуковий блок -->
-        <div class="search-bar">
-            <!-- Поле вводу кількості кімнат -->
-            <input type="number" id="searchRooms" placeholder="Кімнати" min="1">
-            <!-- Поле вводу максимальної ціни -->
-            <input type="number" id="searchPrice" placeholder="Ціна до ($)" min="0">
-            <!-- Кнопка для запуску пошуку -->
-            <button onclick="searchProperties()">🔍</button>
-        </div>
-    </header>
+    <!-- Логотип сайту -->
+    <div class="logo">🏠 Dim-UA</div>
+    <!-- Пошуковий блок -->
+    <div class="search-bar">
+        <!-- Поле вводу кількості кімнат -->
+        <input type="number" id="searchRooms" placeholder="Кімнати" min="1">
+        <!-- Поле вводу максимальної ціни -->
+        <input type="number" id="searchPrice" placeholder="Ціна до ($)" min="0">
+        <!-- Кнопка для запуску пошуку -->
+        <button onclick="searchProperties()">🔍</button>
+    </div>
+</header>
+
+<style>
+/* Сховати логотип на мобільних пристроях */
+@media (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+}
+</style>
+
 
     <!-- Секція з оголошеннями -->
     <div id="listings">
