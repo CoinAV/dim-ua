@@ -346,15 +346,13 @@
     <div id="listings">
 
         <!-- Оголошення 15 -->
-        <div class="container visible" data-rooms="3" data-price="45000" onclick="showDetails('центр міста , 3 кімнати, $45,000', ['assets/images/Zhmerinka-3k-1.webp', 'assets/images/Zhmerinka-3k-2.webp', 'assets/images/Zhmerinka-3k-3.webp', 'assets/images/Zhmerinka-3k-4.webp', 'assets/images/Zhmerinka-3k-5.webp', 'assets/images/Zhmerinka-3k-6.webp', 'assets/images/Zhmerinka-3k-7.webp', 'assets/images/Zhmerinka-3k-8.webp'], '')">
-            <!-- Назва та ціна квартири -->
-            <h3>Квартира, 3 кімнати, $45,000</h3>
-            <!-- Локація квартири -->
-            <p>📍 Локація: м.Жмеринка, центр міста, поруч залізничний вокзал </p>
-            <!-- Інформація про поверх -->
-            <p>🏢 Поверх: 1 із 1</p>
-            <!-- Площа -->
-            <p>🏠 Площа: 72,0 м²</p>
+        <div class="container" data-rooms="3" data-price="45000" onclick="showDetails('центр міста , 3 кімнати, $45,000', ['assets/images/Zhmerinka-3k-1.webp', 'assets/images/Zhmerinka-3k-2.webp', 'assets/images/Zhmerinka-3k-3.webp', 'assets/images/Zhmerinka-3k-4.webp', 'assets/images/Zhmerinka-3k-5.webp', 'assets/images/Zhmerinka-3k-6.webp', 'assets/images/Zhmerinka-3k-7.webp', 'assets/images/Zhmerinka-3k-8.webp'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 3 кімнати, $45,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Жмеринка</span>, центр міста, поруч залізничний вокзал</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">1 із 1</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">72</span> м²</span></p>
+            <meta itemprop="price" content="45000">
+            <meta itemprop="priceCurrency" content="USD">
             <button class="details-button">Детальніше</button>
         </div>
         
