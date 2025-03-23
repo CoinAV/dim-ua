@@ -162,25 +162,30 @@
             transform: scale(1.03); /* Збільшення на 3% */
         }
 
-        /* Кнопка в оголошені */
-        .details-button {
-            position: absolute; /* Абсолютне позиціонування */
-            right: 15px; /* Розташування праворуч */
-            bottom: 15px; /* Розташування знизу */
-            background-color: #28a745; /* Зелений колір */
-            color: white;
-            border: none;
-            padding: 8px 12px; /* Внутрішні відступи */
-            border-radius: 5px; /* Закруглені кути */
-            font-size: 14px;
-            cursor: pointer; /* Вказівник "рука" */
-            transition: background-color 0.3s, transform 0.2s; /* Анімація зміни кольору та масштабу */
-        }
+       /* Кнопка в оголошенні */
+.details-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: #28a745; /* Зелений колір */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px; /* Збільшено для кращої читабельності */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
 
-        .details-button:hover {
-            background-color: #218838; /* Темніший зелений при наведенні */
-            transform: scale(1.05); /* Збільшення при наведенні */
-        }
+/* Стилі для посилання всередині кнопки */
+.details-button a {
+    color: #ffffff; /* Явно білий колір */
+    text-decoration: none; /* Без підкреслення */
+}
+
+/* При наведенні */
+.details-button:hover {
+    background-color: #218838; /* Темніший зелений */
+    transfor
 
         /* Фіксований футер */
         footer {
@@ -370,7 +375,7 @@
     <meta itemprop="price" content="45000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-15" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-15">Детальніше</a>
     </button>
 </div>
         
@@ -383,7 +388,7 @@
     <meta itemprop="price" content="85500">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-14" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-14">Детальніше</a>
     </button>
 </div>
 
@@ -396,7 +401,7 @@
     <meta itemprop="price" content="57999">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button" onclick="event.stopPropagation(); window.location.href='https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html';">
-        <a href="https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html" style="text-decoration: none; color: white;" target="_blank">Детальніше</a>
+        <a href="https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html" target="_blank">Детальніше</a>
     </button>
 </div>
 
@@ -409,7 +414,7 @@
     <meta itemprop="price" content="65000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-12" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-12">Детальніше</a>
     </button>
 </div>
 
@@ -422,7 +427,7 @@
     <meta itemprop="price" content="18000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-11" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-11">Детальніше</a>
     </button>
 </div>
 
@@ -435,7 +440,7 @@
     <meta itemprop="price" content="29500">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-10" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-10">Детальніше</a>
     </button>
 </div>
 
@@ -448,7 +453,7 @@
     <meta itemprop="price" content="40500">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-9" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-9">Детальніше</a>
     </button>
 </div>
 
@@ -461,7 +466,7 @@
     <meta itemprop="price" content="63500">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-8" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-8">Детальніше</a>
     </button>
 </div>
 
@@ -474,7 +479,7 @@
     <meta itemprop="price" content="65000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-7" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-7">Детальніше</a>
     </button>
 </div>
 
@@ -487,7 +492,7 @@
     <meta itemprop="price" content="45000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-6" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-6">Детальніше</a>
     </button>
 </div>
 
@@ -500,7 +505,7 @@
     <meta itemprop="price" content="58000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-5" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-5">Детальніше</a>
     </button>
 </div>
 
@@ -513,7 +518,7 @@
     <meta itemprop="price" content="70000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-4" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-4">Детальніше</a>
     </button>
 </div>
 
@@ -526,7 +531,7 @@
     <meta itemprop="price" content="29900">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-3" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-3">Детальніше</a>
     </button>
 </div>
 
@@ -539,7 +544,7 @@
     <meta itemprop="price" content="35000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-2" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-2">Детальніше</a>
     </button>
 </div>
 
@@ -552,7 +557,7 @@
     <meta itemprop="price" content="38000">
     <meta itemprop="priceCurrency" content="USD">
     <button class="details-button">
-        <a href="#details-1" style="text-decoration: none; color: white;">Детальніше</a>
+        <a href="#details-1">Детальніше</a>
     </button>
 </div>
     </div>
