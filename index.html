@@ -329,6 +329,19 @@
         .close-modal:hover {
             background-color: #0056b3; /* Темно-синій при наведенні */
         }
+
+    /* Стилі для прихованого h1 */
+        .seo-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
     </style>
     
 </head>
@@ -337,6 +350,8 @@
     <header>
         <!-- Логотип сайту -->
         <div class="logo">🏠</div>
+        <!-- Прихований h1 для SEO -->
+        <h1 class="seo-hidden">Нерухомість Вінниця Dim-UA</h1>
         <!-- Пошуковий блок -->
         <div class="search-bar">
             <!-- Поле вводу кількості кімнат -->
