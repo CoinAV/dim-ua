@@ -1,154 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Основна сторінка -->
+    <!-- Головна сторінка -->
     <url>
         <loc>https://dim-ua.online/</loc>
-        <lastmod>2025-03-23</lastmod>
+        <lastmod>2025-03-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Секція "Головна" -->
-    <url>
-        <loc>https://dim-ua.online/#listings</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Секція "Наші послуги" -->
+    <!-- Сторінка "Наші послуги" -->
     <url>
         <loc>https://dim-ua.online/#about</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Секція "Контакти" -->
+    <!-- Сторінка "Контакти" -->
     <url>
         <loc>https://dim-ua.online/#contacts</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Оголошення 1 -->
-    <url>
-        <loc>https://dim-ua.online/#details-1</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 2 -->
-    <url>
-        <loc>https://dim-ua.online/#details-2</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 3 -->
-    <url>
-        <loc>https://dim-ua.online/#details-3</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 4 -->
-    <url>
-        <loc>https://dim-ua.online/#details-4</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 5 -->
-    <url>
-        <loc>https://dim-ua.online/#details-5</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 6 -->
-    <url>
-        <loc>https://dim-ua.online/#details-6</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 7 -->
-    <url>
-        <loc>https://dim-ua.online/#details-7</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 8 -->
-    <url>
-        <loc>https://dim-ua.online/#details-8</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 9 -->
-    <url>
-        <loc>https://dim-ua.online/#details-9</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 10 -->
-    <url>
-        <loc>https://dim-ua.online/#details-10</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 11 -->
-    <url>
-        <loc>https://dim-ua.online/#details-11</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 12 -->
-    <url>
-        <loc>https://dim-ua.online/#details-12</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 13 -->
-    <url>
-        <loc>https://dim-ua.online/#details-13</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Оголошення 14 -->
+    <!-- Окремі сторінки для деталей оголошень -->
     <url>
         <loc>https://dim-ua.online/#details-14</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
-
-    <!-- Оголошення 15 -->
     <url>
-        <loc>https://dim-ua.online/#details-15</loc>
-        <lastmod>2025-03-23</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://dim-ua.online/#details-12</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-11</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-10</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-9</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-8</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-7</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-6</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-5</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-4</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-3</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-2</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dim-ua.online/#details-1</loc>
+        <lastmod>2025-03-24</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 </urlset>
