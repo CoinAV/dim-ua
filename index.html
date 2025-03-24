@@ -1,57 +1,24 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <!-- Оголошення типу документа HTML5 -->
     <meta charset="UTF-8">
-
-    <!-- Налаштування для коректного відображення на мобільних пристроях -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Заголовок сторінки -->
     <title>Нерухомість Вінниця Dim-UA | Купівля та продаж квартир</title>
-
-    <!-- Опис сторінки для пошукових систем -->
     <meta name="description" content="Оголошення про продаж квартир у Вінниці. Зручний пошук житла за найкращими цінами.">
-
-    <!-- Ключові слова для пошукової оптимізації -->
     <meta name="keywords" content="квартира Вінниця, купити квартиру, продаж нерухомості, недорогі квартири, житло Вінниця">
-
-    <!-- Автор сторінки -->
     <meta name="author" content="Dim-UA">
-
-    <!-- Вказівки для пошукових роботів -->
     <meta name="robots" content="index, follow">
-
-    <!-- Іконка для браузера -->
     <link rel="icon" type="image/png" href="assets/images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="assets/images/favicon-48x48.png" sizes="48x48">
-
-    <!-- Іконка для Apple пристроїв -->
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon-180x180.png">
-
-    <!-- Іконка для Android -->
     <link rel="icon" type="image/png" href="assets/images/android-icon-192x192.png" sizes="192x192">
-
-    <!-- Іконка для великих екранів -->
     <link rel="icon" type="image/png" href="assets/images/favicon-256x256.png" sizes="256x256">
-
-    <!-- Географічне розташування: координати -->
     <meta name="geo.position" content="49.2320;28.4672">
-
-    <!-- Географічне розташування: регіон (Вінницька область) -->
     <meta name="geo.region" content="UA-05">
-
-    <!-- Географічне розташування: місто -->
     <meta name="geo.placename" content="Vinnitsa">
-
-    <!-- Іконка сайту (favicon) -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-
-    <!-- Визначення кольору для браузера на мобільних пристроях -->
     <meta name="theme-color" content="#478ac9">
-
-    <!-- Open Graph мета-теги для Facebook та інших платформ -->
     <meta property="og:title" content="Dim-UA Перевірені квартири">
     <meta property="og:description" content="Оголошення про продаж квартир у Вінниці. Зручний пошук житла за найкращими цінами у Вінниці.">
     <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZ9GorLqDbgWysw7KtkZmIlc5SnpIpxAepkp8k5KMKu4ij9VtIiZBaIwVka9rqyj1Ntt6jJUINDxOQlP7fnRK6Op0E5VUQZD_F0v9yan9b1buY95ex-jcpaS0RkeZbwHlnBU28YeCPlFQCSLWz5MevWw1hhA_8xuflXs9l7nWyvBe7WfsoDzPInMLFOT53/s1200/contact-Every-day-in-touch.png">
@@ -59,8 +26,6 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     <meta property="og:site_name" content="Dim-UA">
-
-    <!-- Twitter Cards мета-теги для Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dim-UA Перевірені квартири">
     <meta name="twitter:description" content="Оголошення про продаж квартир у Вінниці. Зручний пошук житла за найкращими цінами у Вінниці.">
@@ -69,268 +34,254 @@
     <meta name="twitter:creator" content="@Dim_Ua_Online">
 
     <style>
-        /* Загальні стилі сторінки */
         body {
-            font-family: Arial, sans-serif; /* Основний шрифт */
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 80px 0 60px; /* Відступи для фіксованого хедера та футера */
-            background-color: #f5f5f5; /* Основний колір фону */
-            background-image: url('assets/images/fon-dim-ua-2024.webp'); /* Фонове зображення */
-            background-size: cover; /* Масштабування зображення */
-            background-repeat: no-repeat; /* Зображення не повторюється */
-            background-position: center; /* Центрування зображення */
-            background-attachment: fixed; /* Фіксація фону під час прокрутки */
-            color: #333; /* Основний колір тексту */
+            padding: 80px 0 60px;
+            background-color: #f5f5f5;
+            background-image: url('assets/images/fon-dim-ua-2024.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            position: relative; /* Додано для коректної роботи ::before */
         }
-
-        /* Фіксований хедер */
-        header {
-            position: fixed; /* Закріплення у верхній частині */
+        body::before {
+            content: "";
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* Напівпрозорий фон */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь під хедером */
-            z-index: 1000; /* Пріоритет накладання */
-            display: flex; /* Використання флексу для вирівнювання */
-            justify-content: center; /* Центрування елементів */
-            align-items: center; /* Вертикальне вирівнювання */
-            padding: 10px 20px; /* Внутрішні відступи */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Затемнення фону для кращої читабельності */
+            z-index: -1;
         }
-
-        /* Логотип */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+        }
         .logo {
-            position: absolute; /* Абсолютне позиціонування */
-            left: 20px; /* Розташування ліворуч */
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        /* Пошукова панель */
+    position: absolute;
+    left: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer; /* Додаємо курсор у вигляді руки */
+}
         .search-bar {
-            display: flex; /* Групування елементів у рядок */
-            align-items: center; /* Вертикальне вирівнювання */
-            gap: 10px; /* Відстань між елементами */
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        /* Інпут для пошуку */
         .search-bar input[type="number"] {
-            padding: 5px; /* Внутрішній відступ */
-            border: 1px solid #ccc; /* Рамка інпуту */
-            border-radius: 4px; /* Закруглені кути */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 14px;
-            width: 100px; /* Ширина поля */
+            width: 100px;
         }
-
-        /* Кнопка пошуку */
         .search-bar button {
             padding: 5px 10px;
             border: none;
             border-radius: 4px;
-            background-color: #007bff; /* Синій фон */
-            color: #fff; /* Білий текст */
-            cursor: pointer; /* Вказівник "рука" */
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
             font-size: 14px;
         }
-
-        /* Зміна кольору кнопки при наведенні */
         .search-bar button:hover {
-            background-color: #0056b3; /* Темно-синій фон */
+            background-color: #0056b3;
         }
-
-        /* Контейнери для оголошень */
         .container {
-            max-width: 400px; /* Максимальна ширина */
-            margin: 20px auto; /* Вирівнювання по центру */
-            background-color: rgba(255, 255, 255, 0.95); /* Білий фон із прозорістю */
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь навколо */
-            padding: 15px; /* Внутрішні відступи */
-            display: none; /* Сховати за замовчуванням */
-            cursor: pointer; /* Вказівник при наведенні */
-            transition: transform 0.2s; /* Анімація масштабування */
-            position: relative; /* Відносне позиціонування для кнопки */
-            border: 1px solid #ddd; /* Рамка контейнера */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+            border: 1px solid #ddd;
         }
-
         .container.visible {
-            display: block; /* Показати елемент */
+            display: block;
         }
-
-        /* Масштабування при наведенні */
         .container:hover {
-            transform: scale(1.03); /* Збільшення на 3% */
+            transform: scale(1.03);
         }
-
-       /* Кнопка в оголошенні */
-.details-button {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    background-color: #28a745; /* Зелений колір */
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 16px; /* Збільшено для кращої читабельності */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-/* Стилі для посилання всередині кнопки */
-.details-button a {
-    color: #ffffff; /* Явно білий колір */
-    text-decoration: none; /* Без підкреслення */
-}
-
-.details-button:hover {
-    background-color: #218838; /* Темніший зелений */
-    transform: scale(1.05); /* Збільшення при наведенні */
-}
-
-        /* Фіксований футер */
+        .details-button {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            background-color: #1e7e34; /* Змінено на темніший зелений для кращої контрастності */
+            border: none;
+            min-width: 48px;
+            min-height: 48px;
+            padding: 12px 16px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 8px;
+        }
+        .details-button a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 12px;
+        }
+        .details-button:hover {
+            background-color: #19692c; /* Темніший зелений при наведенні */
+            transform: scale(1.05);
+        }
         footer {
-            position: fixed; /* Закріплення у нижній частині */
+            position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* Напівпрозорий фон */
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Тінь над футером */
-            padding: 10px 20px; /* Внутрішні відступи */
-            text-align: center; /* Центрування тексту */
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            text-align: center;
         }
-
-        /* Меню в футері */
         .footer-menu {
-            display: flex; /* Горизонтальне вирівнювання */
-            justify-content: center; /* Центрування елементів */
-            gap: 20px; /* Відстань між посиланнями */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-
-        /* Посилання в футері */
         .footer-menu a {
-            text-decoration: none; /* Без підкреслення */
-            color: #333; /* Сірий текст */
+            text-decoration: none;
+            color: #333;
             font-weight: bold;
-            cursor: pointer; /* Вказівник "рука" */
+            cursor: pointer;
         }
-
         .footer-menu a:hover {
-            color: #007bff; /* Синій текст при наведенні */
+            color: #0056b3; /* Змінено на темніший синій для кращої контрастності */
         }
-
-        /* Модальне вікно */
         .modal {
-            display: none; /* Сховано за замовчуванням */
-            position: fixed; /* Фіксоване позиціонування */
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* Повна ширина */
-            height: 100%; /* Повна висота */
-            background-color: rgba(0, 0, 0, 0.8); /* Напівпрозорий чорний фон */
-            z-index: 2000; /* Пріоритет накладання */
-            justify-content: center; /* Горизонтальне центрування */
-            align-items: center; /* Вертикальне центрування */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
         }
-
-        /* Контент модального вікна */
         .modal-content {
             background-color: white;
-            padding: 20px; /* Внутрішні відступи */
-            border-radius: 8px; /* Закруглені кути */
-            max-width: 90%; /* Максимальна ширина */
-            max-height: 90vh; /* Максимальна висота */
-            overflow-y: auto; /* Прокрутка при переповненні */
-            position: relative; /* Відносне позиціонування */
-            text-align: center; /* Центрування тексту */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь */
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-
-        /* Галерея у модальному вікні */
         .gallery {
-            position: relative; /* Відносне позиціонування */
+            position: relative;
             width: 100%;
-            max-width: 800px; /* Максимальна ширина */
-            margin-bottom: 20px; /* Відступ знизу */
+            max-width: 800px;
+            margin-bottom: 20px;
         }
-
-        /* Зображення у галереї */
         .gallery img {
-            width: 100%; /* Повна ширина */
-            height: auto; /* Автоматична висота */
-            max-height: 60vh; /* Максимальна висота */
-            object-fit: contain; /* Збереження пропорцій */
-            border-radius: 5px; /* Закруглені кути */
-            display: none; /* Сховано за замовчуванням */
+            width: 100%;
+            height: auto;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 5px;
+            display: none;
         }
-
         .gallery img.active {
-            display: block; /* Показати активне зображення */
+            display: block;
         }
-
-        /* Стрілки навігації */
         .nav-arrow {
-            position: absolute; /* Абсолютне позиціонування */
-            top: 50%; /* Центрування по вертикалі */
-            transform: translateY(-50%); /* Зсув для центрування */
-            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px; /* Внутрішні відступи */
-            cursor: pointer; /* Вказівник "рука" */
+            padding: 10px;
+            cursor: pointer;
             font-size: 20px;
-            border-radius: 50%; /* Кругла форма */
+            border-radius: 50%;
         }
-
         .nav-arrow.left {
-            left: 10px; /* Розташування ліворуч */
+            left: 10px;
         }
-
         .nav-arrow.right {
-            right: 10px; /* Розташування праворуч */
+            right: 10px;
         }
-
         .nav-arrow:hover {
-            background-color: rgba(0, 0, 0, 0.8); /* Темніший фон при наведенні */
+            background-color: rgba(0, 0, 0, 0.8);
         }
-
-        /* Мініатюри зображень */
         .thumbnails {
-            display: flex; /* Горизонтальне вирівнювання */
-            gap: 10px; /* Відстань між мініатюрами */
-            flex-wrap: wrap; /* Перенос при переповненні */
-            justify-content: center; /* Центрування */
-            margin-top: 10px; /* Відступ зверху */
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
         }
-
         .thumbnails img {
-            width: 80px; /* Фіксована ширина */
-            height: 60px; /* Фіксована висота */
-            object-fit: cover; /* Обрізка зображення */
-            border-radius: 5px; /* Закруглені кути */
-            cursor: pointer; /* Вказівник "рука" */
-            border: 2px solid transparent; /* Прозора рамка */
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
         }
-
         .thumbnails img.active {
-            border: 2px solid #007bff; /* Синя рамка для активного */
+            border: 2px solid #007bff;
         }
-
-        /* Кнопка закриття модального вікна */
         .close-modal {
-            margin-top: 15px; /* Відступ зверху */
-            padding: 5px 10px; /* Внутрішні відступи */
-            background-color: #007bff; /* Синій фон */
+            margin-top: 15px;
+            padding: 5px 10px;
+            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px; /* Закруглені кути */
-            cursor: pointer; /* Вказівник "рука" */
+            border-radius: 5px;
+            cursor: pointer;
         }
-
         .close-modal:hover {
-            background-color: #0056b3; /* Темно-синій при наведенні */
+            background-color: #0056b3;
         }
-
-    /* Стилі для прихованого h1 */
+        .close-modal-x {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 30px;
+            text-align: center;
+        }
+        .close-modal-x:hover {
+            background-color: #e0e0e0;
+            color: #000000;
+        }
         .seo-hidden {
             position: absolute;
             width: 1px;
@@ -341,294 +292,250 @@
             clip: rect(0, 0, 0, 0);
             border: 0;
         }
-        
+        #no-results {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            display: none;
+        }
+        #no-results.visible {
+            display: block;
+        }
     </style>
-    
 </head>
 <body>
-    <!-- Шапка сторінки -->
     <header>
-        <!-- Логотип сайту -->
-        <div class="logo">🏠</div>
-        <!-- Прихований h1 для SEO -->
-        <h1 class="seo-hidden">Нерухомість Вінниця Dim-UA</h1>
-        <!-- Пошуковий блок -->
-        <div class="search-bar">
-            <!-- Поле вводу кількості кімнат -->
-            <input type="number" id="searchRooms" placeholder="Кімнати" min="1">
-            <!-- Поле вводу максимальної ціни -->
-            <input type="number" id="searchPrice" placeholder="Ціна до ($)" min="0">
-            <!-- Кнопка для запуску пошуку -->
-            <button onclick="searchProperties()">🔍</button>
-        </div>
-    </header>
+    <div class="logo" onclick="showSection('listings')">🏠</div>
+    <h1 class="seo-hidden">Нерухомість Вінниця Dim-UA</h1>
+    <div class="search-bar">
+        <input type="number" id="searchRooms" placeholder="Кімнати" min="1">
+        <input type="number" id="searchPrice" placeholder="Ціна до ($)" min="0">
+        <button onclick="searchProperties()">🔍</button>
+    </div>
+</header>
 
-    <!-- Секція з оголошеннями -->
     <div id="listings">
-        
-        <!-- Оголошення 14 -->
-<div class="container visible" data-rooms="2" data-price="85500" onclick="showDetails('вул. Тимофіївська , 2 кімнати, $85,500', ['assets/images/Akademichniy-vinnitsa-2k-2-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-3-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-4-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-6-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-8-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-2025-03-21.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 2 кімнати, $85,500</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, Район Академічний, вул. Тимофіївська</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">6 із 8</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">64.5</span> м²</span></p>
-    <meta itemprop="price" content="85500">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-14">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 13 -->
-<div class="container visible" data-rooms="1" data-price="57999" onclick="window.location.href='https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html';" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО! Квартира, 1 кімнати, $57,999</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний Comfort, шосе Немирівське</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">9 із 10</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">48</span> м²</span></p>
-    <meta itemprop="price" content="57999">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button" onclick="event.stopPropagation(); window.location.href='https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html';">
-        <a href="https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html" target="_blank">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 12 -->
-<div class="container visible" data-rooms="2" data-price="65000" onclick="showDetails('шосе Немирівське, 2 кімнати, $65,000', ['assets/images/2k -Nemiriv-Vinnitsa.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО! Квартира, 2 кімнати, $65,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний Comfort, шосе Немирівське</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">8 із 10</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">53</span> м²</span></p>
-    <meta itemprop="price" content="65000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-12">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 11 -->
-<div class="container visible" data-rooms="1" data-price="18000" onclick="showDetails('шосе Немирівське, 1 кімната, $18,000', ['assets/images/Kimnata v gurtozhitku.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Кімната в гур., 1 кімната, $18,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, шосе Немирівське</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">9 із 9</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">24.5</span> м²</span></p>
-    <meta itemprop="price" content="18000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-11">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 10 -->
-<div class="container visible" data-rooms="2" data-price="29500" onclick="showDetails('вул. Дмитра Білоконя, 2 кімнати, $29,500', ['assets/images/1-2-3-4.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО Квартира, 2 кімнати, $29,500</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Дмитра Білоконя</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">1 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">42</span> м²</span></p>
-    <meta itemprop="price" content="29500">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-10">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 9 -->
-<div class="container visible" data-rooms="2" data-price="40500" onclick="showDetails('вул.Захісників Неба, 2 кімнати, $40,500', ['assets/images/Zahisnikiv_2024-12-13.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО! Квартира, 2 кімнати, $40,500</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Захісників Неба</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">5 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">50.2</span> м²</span></p>
-    <meta itemprop="price" content="40500">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-9">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 8 -->
-<div class="container visible" data-rooms="1" data-price="63500" onclick="showDetails('вул.Шимка Максима, 1 кімнати, $63,500', ['assets/images/2024-12-07 135618.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 1 кімнати, $63,500</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний, вул. Шимка Максима</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">3 із 12</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">47</span> м²</span></p>
-    <meta itemprop="price" content="63500">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-8">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 7 -->
-<div class="container visible" data-rooms="1" data-price="65000" onclick="showDetails('вул.Академіка Янгеля, 1 кімната, $65,000', ['assets/images/2024-12-07 182933.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 1 кімнати, $65,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Династія, вул. Академіка Янгеля</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">9 із 12</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">44</span> м²</span></p>
-    <meta itemprop="price" content="65000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-7">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 6 -->
-<div class="container visible" data-rooms="1" data-price="45000" onclick="showDetails('вул.Замостянська, 1 кімнати, $45,000', ['assets/images/2024-12-07 185006.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО! Квартира, 1 кімнати, $45,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Замостянська</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">31.9</span> м²</span></p>
-    <meta itemprop="price" content="45000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-6">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 5 -->
-<div class="container visible" data-rooms="1" data-price="58000" onclick="showDetails('вул.Академіка Янгеля, 1 кімнати, $58,000', ['assets/images/2024-12-07 185101.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 1 кімнати, $58,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Академіка Янгеля, ЖК Династія</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">12 із 12</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">45.0</span> м²</span></p>
-    <meta itemprop="price" content="58000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-5">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 4 -->
-<div class="container visible" data-rooms="1" data-price="70000" onclick="showDetails('вул.Олега Антонова, 1 кімнати, $70,000', ['assets/images/2024-12-07 185147.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 1 кімнати, $70,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Олега Антонова, ЖК Андора</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">7 із 12</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">45.0</span> м²</span></p>
-    <meta itemprop="price" content="70000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-4">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 3 -->
-<div class="container visible" data-rooms="2" data-price="29900" onclick="showDetails('вул. Дмитра Білоконя, 2 кімнати, $29,900', ['assets/images/2024-12-07 185224.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">Квартира, 2 кімнати, $29,900</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Дмитра Білоконя</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">46.6</span> м²</span></p>
-    <meta itemprop="price" content="29900">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-3">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 2 -->
-<div class="container visible" data-rooms="2" data-price="35000" onclick="showDetails('ЗНЯТА З ПРОДАЖУ, 2 кімнати, $35,000', ['assets/images/2024-12-07 185252.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ЗНЯТА З ПРОДАЖУ, 2 кімнати, $35,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Левка Лук’яненка</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">46.6</span> м²</span></p>
-    <meta itemprop="price" content="35000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-2">Детальніше</a>
-    </button>
-</div>
-
-<!-- Оголошення 1 -->
-<div class="container visible" data-rooms="2" data-price="38000" onclick="showDetails('вул. Академіка Янгеля, 2 кімнати, $38,000', ['assets/images/2024-12-07 185313.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
-    <h3 itemprop="name">ПРОДАНО - Квартира, 2 кімнати, $38,000</h3>
-    <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Академіка Янгеля</span></p>
-    <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
-    <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">36.0</span> м²</span></p>
-    <meta itemprop="price" content="38000">
-    <meta itemprop="priceCurrency" content="USD">
-    <button class="details-button">
-        <a href="#details-1">Детальніше</a>
-    </button>
-</div>
+        <h2 class="seo-hidden">Оголошення про продаж квартир у Вінниці</h2>
+        <div class="container visible" data-rooms="2" data-price="85500" onclick="showDetails('вул. Тимофіївська , 2 кімнати, $85,500', ['assets/images/Akademichniy-vinnitsa-2k-2-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-3-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-4-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-6-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-8-2025-03-21.png', 'assets/images/Akademichniy-vinnitsa-2k-2025-03-21.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 2 кімнати, $85,500</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, Район Академічний, вул. Тимофіївська</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">6 із 8</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">64.5</span> м²</span></p>
+            <meta itemprop="price" content="85500">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-14">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="57999" onclick="window.location.href='https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html';" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО! Квартира, 1 кімнати, $57,999</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний Comfort, шосе Немирівське</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">9 із 10</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">48</span> м²</span></p>
+            <meta itemprop="price" content="57999">
+            <meta legislación="priceCurrency" content="USD">
+            <button class="details-button" onclick="event.stopPropagation(); window.location.href='https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html';">
+                <a href="https://dom.ria.com/uk/realty-prodaja-kvartira-vinnitskie-hutora-emiovkoe-oe-32846938.html" target="_blank">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="65000" onclick="showDetails('шосе Немирівське, 2 кімнати, $65,000', ['assets/images/2k -Nemiriv-Vinnitsa.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО! Квартира, 2 кімнати, $65,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний Comfort, шосе Немирівське</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">8 із 10</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">53</span> м²</span></p>
+            <meta itemprop="price" content="65000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-12">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="18000" onclick="showDetails('шосе Немирівське, 1 кімната, $18,000', ['assets/images/Kimnata v gurtozhitku.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Кімната в гур., 1 кімната, $18,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, шосе Немирівське</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">9 із 9</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">24.5</span> м²</span></p>
+            <meta itemprop="price" content="18000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-11">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="29500" onclick="showDetails('вул. Дмитра Білоконя, 2 кімнати, $29,500', ['assets/images/1-2-3-4.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО Квартира, 2 кімнати, $29,500</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Дмитра Білоконя</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">1 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">42</span> м²</span></p>
+            <meta itemprop="price" content="29500">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-10">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="40500" onclick="showDetails('вул.Захісників Неба, 2 кімнати, $40,500', ['assets/images/Zahisnikiv_2024-12-13.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО! Квартира, 2 кімнати, $40,500</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Захісників Неба</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">5 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">50.2</span> м²</span></p>
+            <meta itemprop="price" content="40500">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-9">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="63500" onclick="showDetails('вул.Шимка Максима, 1 кімнати, $63,500', ['assets/images/2024-12-07 135618.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 1 кімнати, $63,500</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Сімейний, вул. Шимка Максима</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">3 із 12</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">47</span> м²</span></p>
+            <meta itemprop="price" content="63500">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-8">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="65000" onclick="showDetails('вул.Академіка Янгеля, 1 кімната, $65,000', ['assets/images/2024-12-07 182933.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 1 кімнати, $65,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, ЖК Династія, вул. Академіка Янгеля</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">9 із 12</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">44</span> м²</span></p>
+            <meta itemprop="price" content="65000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-7">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="45000" onclick="showDetails('вул.Замостянська, 1 кімнати, $45,000', ['assets/images/2024-12-07 185006.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО! Квартира, 1 кімнати, $45,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Замостянська</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">31.9</span> м²</span></p>
+            <meta itemprop="price" content="45000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-6">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="58000" onclick="showDetails('вул.Академіка Янгеля, 1 кімнати, $58,000', ['assets/images/2024-12-07 185101.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 1 кімнати, $58,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Академіка Янгеля, ЖК Династія</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">12 із 12</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">45.0</span> м²</span></p>
+            <meta itemprop="price" content="58000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-5">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="1" data-price="70000" onclick="showDetails('вул.Олега Антонова, 1 кімнати, $70,000', ['assets/images/2024-12-07 185147.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 1 кімнати, $70,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Олега Антонова, ЖК Андора</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">7 із 12</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">45.0</span> м²</span></p>
+            <meta itemprop="price" content="70000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-4">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="29900" onclick="showDetails('вул. Дмитра Білоконя, 2 кімнати, $29,900', ['assets/images/2024-12-07 185224.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">Квартира, 2 кімнати, $29,900</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Дмитра Білоконя</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">46.6</span> м²</span></p>
+            <meta itemprop="price" content="29900">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-3">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="35000" onclick="showDetails('ЗНЯТА З ПРОДАЖУ, 2 кімнати, $35,000', ['assets/images/2024-12-07 185252.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ЗНЯТА З ПРОДАЖУ, 2 кімнати, $35,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Левка Лук’яненка</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">46.6</span> м²</span></p>
+            <meta itemprop="price" content="35000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-2">Детальніше</a>
+            </button>
+        </div>
+        <div class="container visible" data-rooms="2" data-price="38000" onclick="showDetails('вул. Академіка Янгеля, 2 кімнати, $38,000', ['assets/images/2024-12-07 185313.png'], '')" itemscope itemtype="http://schema.org/RealEstateListing">
+            <h3 itemprop="name">ПРОДАНО - Квартира, 2 кімнати, $38,000</h3>
+            <p>📍 Локація: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">м. Вінниця</span>, вул. Академіка Янгеля</span></p>
+            <p>🏢 Поверх: <span itemprop="floorLevel">4 із 5</span></p>
+            <p>🏠 Площа: <span itemprop="floorSize" itemscope itemtype="http://schema.org/QuantitativeValue"><span itemprop="value">36.0</span> м²</span></p>
+            <meta itemprop="price" content="38000">
+            <meta itemprop="priceCurrency" content="USD">
+            <button class="details-button">
+                <a href="#details-1">Детальніше</a>
+            </button>
+        </div>
+        <div id="no-results">
+            <p>Нічого не знайдено</p>
+        </div>
     </div>
 
-    <!-- Розділ "Наші Послуги" -->
     <div id="about" class="container">
-        <!-- Заголовок -->
-        <h3>Наші послуги</h3>
-        <p><h4>🏠 Пошук і підбір нерухомості</h4></p>
+        <h2>Наші послуги</h2>
+        <p><h3>🏠 Пошук і підбір нерухомості</h3></p>
         <p>- 🔎 Допомога в пошуку відповідних варіантів для покупки або оренди.</p>
-        <p><h4>🏡 Продаж нерухомості</h4></p>
+        <p><h3>🏡 Продаж нерухомості</h3></p>
         <p>- 📑 Організація процесу продажу, включаючи підготовку документів, рекламу та переговори з покупцями.</p>
-        <p><h4>🏢 Оренда нерухомості</h4></p>
+        <p><h3>🏢 Оренда нерухомості</h3></p>
         <p>- 📜 Послуги з підбору та оформлення договорів оренди для орендодавців і орендарів.</p>
-        <p><h4>⚖️ Юридичний супровід угод</h4></p>
+        <p><h3>⚖️ Юридичний супровід угод</h3></p>
         <p>- 📝 Консультування та допомога в підготовці всіх необхідних юридичних документів.</p>
-        <p><h4>🏦 Супровід іпотечних угод</h4></p>
+        <p><h3>🏦 Супровід іпотечних угод</h3></p>
         <p>- 💳 Допомога у виборі та оформленні іпотечних кредитів, зокрема Єоселя.</p>
-        <p><h4>📈 Маркетинг і реклама</h4></p>
+        <p><h3>📈 Маркетинг і реклама</h3></p>
         <p>- 📣 Просування об'єктів нерухомості через різні рекламні канали.</p>
     </div>
 
-    <!-- Розділ "Контакти" -->
     <div id="contacts" class="container">
-        <!-- Заголовок -->
-        <h3>Контакти</h3>
-        <!-- Телефон -->
+        <h2>Контакти</h2>
         <p>📞 Телефон: <a href="tel:+380633889856">+38 (063) 388-98-56</a></p>
         <p>📱 Viber: +38 (063) 388-98-56</p>
-        <!-- Опис -->
         <p>❔ Маєте запитання чи потрібна додаткова інформація? 😊 Ми завжди раді допомогти!</p>
-        <!-- Посилання на Телеграм канал -->
         <p>🌐 Приєднуйтесь до нашого <a href="https://t.me/Dim_Ua_Online" target="_blank">телеграм-каналу</a>!</p>
     </div>
 
-    <!-- Модальне вікно -->
     <div class="modal" id="detailsModal">
-        <!-- Контент модального вікна -->
         <div class="modal-content">
-            <!-- Заголовок модального вікна -->
+            <button class="close-modal-x" onclick="closeModal()">✖</button>
             <h3 id="modalTitle"></h3>
-            <!-- Галерея зображень -->
             <div class="gallery" id="modalImages">
                 <button class="nav-arrow left" onclick="prevImage()">◀</button>
                 <button class="nav-arrow right" onclick="nextImage()">▶</button>
             </div>
-            <!-- Мініатюри зображень -->
             <div class="thumbnails" id="modalThumbnails"></div>
-            <!-- Опис квартири -->
             <p id="modalDescription"></p>
-            <!-- Контактна інформація -->
             <p>📞 <strong>Зв'яжіться з нами для перегляду або додаткової інформації!</strong></p>
             <p><a href="tel:+380633889856">+38 (063) 388-98-56</a></p>
-            <!-- Кнопка для закриття модального вікна -->
             <button class="close-modal" onclick="closeModal()">Закрити</button>
         </div>
     </div>
 
-    <!-- Футер сторінки -->
     <footer>
-        <!-- Меню у футері -->
         <div class="footer-menu">
-            <!-- Посилання на головну сторінку -->
             <a href="#listings" onclick="showSection('listings')">Головна</a>
-            <!-- Посилання на розділ "Наші послуги" -->
             <a href="#about" onclick="showSection('about')">Наші послуги</a>
-            <!-- Посилання на розділ "Контакти" -->
             <a href="#contacts" onclick="showSection('contacts')">Контакти</a>
         </div>
     </footer>
 
-    <!-- JavaScript для функціоналу -->
     <script>
-        // Змінна для відстеження поточного зображення
         let currentImageIndex = 0;
 
-        // Функція для відображення конкретної секції
         function showSection(sectionId) {
-            // Ховаємо всі контейнери
             document.querySelectorAll('.container').forEach(container => {
                 container.classList.remove('visible');
             });
+            document.getElementById('no-results').classList.remove('visible');
 
-            // Показуємо потрібну секцію
             if (sectionId === 'listings') {
                 document.querySelectorAll('#listings .container').forEach(container => {
                     container.classList.add('visible');
@@ -638,64 +545,62 @@
             }
         }
 
-        // Функція для пошуку квартир
         function searchProperties() {
-            // Отримуємо значення введених даних
             const searchRooms = document.getElementById('searchRooms').value;
             const searchPrice = document.getElementById('searchPrice').value;
             const properties = document.querySelectorAll('#listings .container');
+            const noResults = document.getElementById('no-results');
+            let hasResults = false;
 
-            // Фільтруємо оголошення на основі введених даних
             properties.forEach(property => {
                 const rooms = property.getAttribute('data-rooms');
                 const price = property.getAttribute('data-price');
 
-                // Умови видимості оголошення
                 if (
                     (searchRooms === "" || rooms == searchRooms) &&
                     (searchPrice === "" || price <= searchPrice)
                 ) {
                     property.classList.add('visible');
+                    hasResults = true;
                 } else {
                     property.classList.remove('visible');
                 }
             });
+
+            noResults.classList.toggle('visible', !hasResults);
         }
 
-        // Функція для показу деталей квартири у модальному вікні
         function showDetails(title, images, description) {
             const modal = document.getElementById('detailsModal');
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
 
-            // Очищаємо контейнери для зображень і мініатюр
             const imagesContainer = document.getElementById('modalImages');
             const thumbnailsContainer = document.getElementById('modalThumbnails');
             imagesContainer.innerHTML = '<button class="nav-arrow left" onclick="prevImage()">◀</button><button class="nav-arrow right" onclick="nextImage()">▶</button>';
             thumbnailsContainer.innerHTML = '';
 
-            // Додаємо зображення та мініатюри
             images.forEach((src, index) => {
                 if (src) {
                     const img = document.createElement('img');
                     img.src = src;
+                    img.alt = `Фото квартири ${title} - зображення ${index + 1}`;
                     img.className = index === 0 ? 'active' : '';
                     imagesContainer.appendChild(img);
 
                     const thumb = document.createElement('img');
                     thumb.src = src;
+                    thumb.alt = `Мініатюра квартири ${title} - зображення ${index + 1}`;
                     thumb.className = index === 0 ? 'active' : '';
                     thumb.onclick = () => switchImage(index);
                     thumbnailsContainer.appendChild(thumb);
                 }
             });
 
-            // Ініціалізація індексу та стрілок
             currentImageIndex = 0;
             updateArrows(images.length);
             modal.style.display = 'flex';
 
-            // Закриття модального вікна при кліку на фон
             modal.onclick = function(event) {
                 if (event.target === modal) {
                     closeModal();
@@ -703,12 +608,10 @@
             };
         }
 
-        // Функція для закриття модального вікна
         function closeModal() {
             document.getElementById('detailsModal').style.display = 'none';
         }
 
-        // Функція для перемикання зображень
         function switchImage(index) {
             const images = document.querySelectorAll('#modalImages img');
             const thumbs = document.querySelectorAll('#modalThumbnails img');
@@ -720,14 +623,12 @@
             updateArrows(images.length);
         }
 
-        // Функція для переходу до попереднього зображення
         function prevImage() {
             if (currentImageIndex > 0) {
                 switchImage(currentImageIndex - 1);
             }
         }
 
-        // Функція для переходу до наступного зображення
         function nextImage() {
             const images = document.querySelectorAll('#modalImages img');
             if (currentImageIndex < images.length - 1) {
@@ -735,7 +636,6 @@
             }
         }
 
-        // Функція для оновлення видимості стрілок
         function updateArrows(totalImages) {
             const leftArrow = document.querySelector('.nav-arrow.left');
             const rightArrow = document.querySelector('.nav-arrow.right');
@@ -743,15 +643,13 @@
             rightArrow.style.display = currentImageIndex === totalImages - 1 ? 'none' : 'block';
         }
 
-        // За замовчуванням показуємо секцію "Головна"
         showSection('listings');
 
-        // Закриття модального вікна клавішею Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && document.getElementById('detailsModal').style.display === 'flex') {
                 closeModal();
             }
         });
     </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9254f8a60a4b134b',t:'MTc0MjgwNjc1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
