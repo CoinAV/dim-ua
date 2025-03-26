@@ -69,14 +69,13 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             padding: 10px 0;
-            height: 60px; /* Фіксована висота шапки */
+            height: 60px;
             display: flex;
             align-items: center;
         }
-        /* Контейнер для вирівнювання елементів шапки */
         .header-content {
             position: relative;
-            max-width: 600px; /* Такий же max-width, як у .container */
+            max-width: 600px;
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -89,7 +88,6 @@
             cursor: pointer;
             color: #1e7e34;
         }
-        /* Елемент для стрілки назад */
         .back-arrow {
             display: flex;
             align-items: center;
@@ -108,11 +106,9 @@
             color: #1e7e34;
             transition: color 0.2s ease;
         }
-        /* Приховуємо стрілку вліво за замовчуванням (для десктопів) */
         .back-arrow .arrow-left {
             display: none;
         }
-        /* Показуємо стрілку вправо за замовчуванням (для десктопів) */
         .back-arrow .arrow-right {
             display: block;
         }
@@ -168,9 +164,8 @@
         .nav-arrow:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
-        .nav-arrow:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .nav-arrow[style*="display: none"] {
+            display: none !important;
         }
         .thumbnails {
             display: flex;
@@ -392,30 +387,29 @@
         .footer-gmb a:hover {
             text-decoration: underline;
         }
-        /* Медіа-запити для мобільних пристроїв */
         @media (max-width: 1024px) {
             body {
-                padding-top: 60px; /* Зменшуємо відступ для компактної шапки */
+                padding-top: 60px;
             }
             header {
                 padding: 10px 15px;
             }
             .header-content {
                 display: flex;
-                justify-content: flex-start; /* Вирівнюємо вміст зліва */
+                justify-content: flex-start;
             }
             header .logo {
-                display: none; /* Приховуємо логотип */
+                display: none;
             }
             .back-arrow {
-                position: static; /* Скидаємо абсолютне позиціонування */
-                margin: 0; /* Скидаємо відступи */
+                position: static;
+                margin: 0;
             }
             .back-arrow .arrow-left {
-                display: block; /* Показуємо стрілку вліво */
+                display: block;
             }
             .back-arrow .arrow-right {
-                display: none; /* Приховуємо стрілку вправо */
+                display: none;
             }
         }
         @media (max-width: 600px) {
@@ -470,17 +464,13 @@
 </head>
 <body>
     <header>
-        <!-- Контейнер для вирівнювання елементів шапки -->
         <div class="header-content">
             <div class="logo" onclick="window.location.href='https://dim-ua.online'">🏠 Dim-UA</div>
-            <!-- Стрілка назад у шапці -->
-            <div class="back-arrow" data-rooms="1" onclick="window.location.href='https://dim-ua.online'" role="button" aria-label="Повернутися до списку оголошень">
-                <!-- Стрілка вліво (для мобільних) -->
+            <div class="back-arrow" data-rooms="1" onclick="window.location.href='https://dim-ua.online'" role="button" aria-label="Повернутися до списку оголошень про 1-кімнатні квартири у Вінницьких Хуторах">
                 <svg class="arrow-left" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="M8 13.5L2.5 8m0 0L8 2.5M2.5 8h11" stroke="#333" stroke-width="2"/>
                 </svg>
                 <span>Інші <span class="rooms-count">1</span>к квартири у Вінницьких Хуторах</span>
-                <!-- Стрілка вправо (для десктопів) -->
                 <svg class="arrow-right" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="M8 2.5L13.5 8m0 0L8 13.5M13.5 8H2.5" stroke="#333" stroke-width="2"/>
                 </svg>
@@ -489,9 +479,9 @@
     </header>
 
     <div class="container">
-        <div class="gallery" id="gallery">
-            <button class="nav-arrow left" aria-label="Попереднє фото" onclick="prevImage()">◀</button>
-            <button class="nav-arrow right" aria-label="Наступне фото" onclick="nextImage()">▶</button>
+        <div class="gallery" id="gallery" role="region" aria-label="Галерея зображень квартири">
+            <button class="nav-arrow left" aria-label="Перейти до попереднього фото" onclick="prevImage()">◀</button>
+            <button class="nav-arrow right" aria-label="Перейти до наступного фото" onclick="nextImage()">▶</button>
             <img src="assets/images/apartment-N13-1-2025-03-26.webp" alt="1-кімнатна квартира у Вінницьких Хуторах, ЖК Сімейний Comfort, шосе Немирівське" class="active" loading="lazy">
             <img src="assets/images/apartment-N13-2-2025-03-26.webp" alt="Інтер'єр 1-кімнатної квартири у Вінницьких Хуторах, ЖК Сімейний Comfort" loading="lazy">
             <img src="assets/images/apartment-N13-3-2025-03-26.webp" alt="Вид з вікна 1-кімнатної квартири у Вінницьких Хуторах, ЖК Сімейний Comfort" loading="lazy">
@@ -522,7 +512,7 @@
             <h3>Чому варто купити цю квартиру?</h3>
             <p>Ідеальний варіант для комфортного проживання: стильний ремонт, підігрів підлоги, панорамні вікна та зручне розташування неподалік від інфраструктури. ЖК Сімейний Comfort – це сучасний комплекс із закритим двором, що забезпечує тишу та безпеку.</p>
         </div>
-        <a href="tel:+380633889856" class="contact-btn">Подзвонити</a>
+        <a href="tel:+380633889856" class="contact-btn" aria-label="Подзвонити агенту за номером +380 63 388 98 56">Подзвонити</a>
         <div class="agent-info">
             <p>UA, Вінницькі Хутори, Він 23219</p>
             <p>Оновлено: 26.03.2025 • Оголошення №13 </p>
@@ -538,8 +528,8 @@
 
     <footer>
         <div class="footer-menu">
-            <a href="tel:+380633889856" class="footer-call-btn">+380 63 388 98 56</a>
-            <a href="viber://chat?number=%2B380633889856" class="footer-viber-btn">Viber</a>
+            <a href="tel:+380633889856" class="footer-call-btn" aria-label="Подзвонити через телефон за номером +380 63 388 98 56">+380 63 388 98 56</a>
+            <a href="viber://chat?number=%2B380633889856" class="footer-viber-btn" aria-label="Написати в Viber за номером +380 63 388 98 56">Viber</a>
         </div>
     </footer>
 
@@ -577,28 +567,32 @@
     </script>
 
     <script defer>
-        // Динамічне оновлення тексту для стрілки назад
-        document.addEventListener('DOMContentLoaded', () => {
-            const backArrows = document.querySelectorAll('.back-arrow');
-            backArrows.forEach(arrow => {
-                const rooms = arrow.getAttribute('data-rooms');
-                arrow.querySelector('.rooms-count').innerText = rooms;
-            });
-        });
-
-        let currentImageIndex = 0;
+        // Кешування результатів querySelectorAll
         const images = document.querySelectorAll('#gallery img');
         const thumbs = document.querySelectorAll('#thumbnails img');
         const leftArrow = document.querySelector('.nav-arrow.left');
         const rightArrow = document.querySelector('.nav-arrow.right');
+        let currentImageIndex = 0;
+
+        // Ініціалізація галереї
+        function initGallery() {
+            if (images.length < 2) {
+                leftArrow.style.display = 'none';
+                rightArrow.style.display = 'none';
+            } else {
+                updateArrows();
+            }
+        }
 
         function switchImage(index) {
-            images.forEach(img => img.classList.remove('active'));
-            thumbs.forEach(thumb => thumb.classList.remove('active'));
-            images[index].classList.add('active');
-            thumbs[index].classList.add('active');
-            currentImageIndex = index;
-            updateArrows();
+            if (currentImageIndex !== index) {
+                images[currentImageIndex].classList.remove('active');
+                thumbs[currentImageIndex].classList.remove('active');
+                images[index].classList.add('active');
+                thumbs[index].classList.add('active');
+                currentImageIndex = index;
+                updateArrows();
+            }
         }
 
         function prevImage() {
@@ -614,16 +608,27 @@
         }
 
         function updateArrows() {
-            leftArrow.disabled = currentImageIndex === 0;
-            rightArrow.disabled = currentImageIndex === images.length - 1;
+            leftArrow.style.display = currentImageIndex === 0 ? 'none' : 'block';
+            rightArrow.style.display = currentImageIndex === images.length - 1 ? 'none' : 'block';
         }
 
+        // Обробка клавіатури
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') prevImage();
             if (e.key === 'ArrowRight') nextImage();
         });
 
-        updateArrows();
+        // Виклик ініціалізації після завантаження DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery();
+
+            // Динамічне оновлення тексту для стрілки назад
+            const backArrows = document.querySelectorAll('.back-arrow');
+            backArrows.forEach(arrow => {
+                const rooms = arrow.getAttribute('data-rooms');
+                arrow.querySelector('.rooms-count').innerText = rooms;
+            });
+        });
     </script>
 </body>
 </html>
