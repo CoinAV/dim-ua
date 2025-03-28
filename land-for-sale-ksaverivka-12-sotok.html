@@ -223,65 +223,58 @@
     </script>
 
     <script defer>
-        const images = document.querySelectorAll('#gallery img');
-        const thumbs = document.querySelectorAll('#thumbnails img');
-        const leftArrow = document.querySelector('.nav-arrow.left');
-        const rightArrow = document.querySelector('.nav-arrow.right');
-        let currentImageIndex = 0;
+    const images = document.querySelectorAll('#gallery img');
+    const thumbs = document.querySelectorAll('#thumbnails img');
+    const leftArrow = document.querySelector('.nav-arrow.left');
+    const rightArrow = document.querySelector('.nav-arrow.right');
+    let currentImageIndex = 0;
 
-        function initGallery() {
-            if (images.length < 2) {
-                leftArrow.style.display = 'none';
-                rightArrow.style.display = 'none';
-            } else {
-                updateArrows();
-            }
+    function initGallery() {
+        if (images.length < 2) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        } else {
+            updateArrows();
         }
+    }
 
-        function switchImage(index) {
-            if (currentImageIndex !== index) {
-                images[currentImageIndex].classList.remove('active');
-                thumbs[currentImageIndex].classList.remove('active');
-                images[index].classList.add('active');
-                thumbs[index].classList.add('active');
-                currentImageIndex = index;
-                updateArrows();
-            }
+    function switchImage(index) {
+        if (currentImageIndex !== index) {
+            images[currentImageIndex].classList.remove('active');
+            thumbs[currentImageIndex].classList.remove('active');
+            images[index].classList.add('active');
+            thumbs[index].classList.add('active');
+            currentImageIndex = index;
+            updateArrows();
         }
+    }
 
-        function prevImage() {
-            if (currentImageIndex > 0) {
-                switchImage(currentImageIndex - 1);
-            }
+    function prevImage() {
+        if (currentImageIndex > 0) {
+            switchImage(currentImageIndex - 1);
         }
+    }
 
-        function nextImage() {
-            if (currentImageIndex < images.length - 1) {
-                switchImage(currentImageIndex + 1);
-            }
+    function nextImage() {
+        if (currentImageIndex < images.length - 1) {
+            switchImage(currentImageIndex + 1);
         }
+    }
 
-        function updateArrows() {
-            leftArrow.style.display = currentImageIndex === 0 ? 'none' : 'block';
-            rightArrow.style.display = currentImageIndex === images.length - 1 ? 'none' : 'block';
-        }
+    function updateArrows() {
+        leftArrow.style.display = currentImageIndex === 0 ? 'none' : 'block';
+        rightArrow.style.display = currentImageIndex === images.length - 1 ? 'none' : 'block';
+    }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevImage();
-            if (e.key === 'ArrowRight') nextImage();
-        });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+    });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initGallery();
-
-            // Динамічне оновлення тексту для стрілки назад
-            const backArrows = document.querySelectorAll('.back-arrow');
-            backArrows.forEach(arrow => {
-                const rooms = arrow.getAttribute('data-rooms');
-                arrow.querySelector('.rooms-count')?.innerText = rooms;
-            });
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+        initGallery();
+    });
+</script>
 
 </body>
 </html>
