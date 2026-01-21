@@ -10,7 +10,7 @@
 
     <!-- Сторінка "Наші послуги" -->
     <url>
-        <loc>https://21000.online/#about</loc>
+        <loc>https://21000.online/about</loc>
         <lastmod>2025-03-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -18,7 +18,7 @@
 
     <!-- Сторінка "Контакти" -->
     <url>
-        <loc>https://21000.online/#contacts</loc>
+        <loc>https://21000.online/contacts</loc>
         <lastmod>2025-03-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
