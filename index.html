@@ -601,132 +601,156 @@
     </div>
 </footer>
 
-    <script>
-        let currentImageIndex = 0;
+   <script>
+    let currentImageIndex = 0;
 
-        function showSection(sectionId) {
-            document.querySelectorAll('.container').forEach(container => {
-                container.classList.remove('visible');
-            });
-            document.getElementById('no-results').classList.remove('visible');
+    /**
+     * Ініціалізація сторінки: відображення списку оголошень
+     */
+    function initPage() {
+        document.querySelectorAll('#listings .container').forEach(container => {
+            container.classList.add('visible');
+        });
+    }
 
-            if (sectionId === 'listings') {
-                document.querySelectorAll('#listings .container').forEach(container => {
-                    container.classList.add('visible');
-                });
+    /**
+     * Функція пошуку нерухомості за кімнатами та ціною
+     */
+    function searchProperties() {
+        const searchRooms = document.getElementById('searchRooms').value;
+        const searchPrice = document.getElementById('searchPrice').value;
+        const properties = document.querySelectorAll('#listings .container');
+        const noResults = document.getElementById('no-results');
+        let hasResults = false;
+
+        properties.forEach(property => {
+            const rooms = property.getAttribute('data-rooms');
+            const price = property.getAttribute('data-price');
+
+            if (
+                (searchRooms === "" || rooms == searchRooms) &&
+                (searchPrice === "" || price <= searchPrice)
+            ) {
+                property.classList.add('visible');
+                hasResults = true;
             } else {
-                document.getElementById(sectionId).classList.add('visible');
+                property.classList.remove('visible');
             }
-        }
+        });
 
-        function searchProperties() {
-            const searchRooms = document.getElementById('searchRooms').value;
-            const searchPrice = document.getElementById('searchPrice').value;
-            const properties = document.querySelectorAll('#listings .container');
-            const noResults = document.getElementById('no-results');
-            let hasResults = false;
+        noResults.classList.toggle('visible', !hasResults);
+    }
 
-            properties.forEach(property => {
-                const rooms = property.getAttribute('data-rooms');
-                const price = property.getAttribute('data-price');
+    /**
+     * Відкриття модального вікна з деталями та галереєю
+     */
+    function showDetails(title, images, description) {
+        const modal = document.getElementById('detailsModal');
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalDescription').innerText = description;
 
-                if (
-                    (searchRooms === "" || rooms == searchRooms) &&
-                    (searchPrice === "" || price <= searchPrice)
-                ) {
-                    property.classList.add('visible');
-                    hasResults = true;
-                } else {
-                    property.classList.remove('visible');
-                }
-            });
+        const imagesContainer = document.getElementById('modalImages');
+        const thumbnailsContainer = document.getElementById('modalThumbnails');
+        
+        // Очищення та додавання стрілок навігації
+        imagesContainer.innerHTML = '<button class="nav-arrow left" onclick="prevImage()">◀</button><button class="nav-arrow right" onclick="nextImage()">▶</button>';
+        thumbnailsContainer.innerHTML = '';
 
-            noResults.classList.toggle('visible', !hasResults);
-        }
+        images.forEach((src, index) => {
+            if (src) {
+                // Додавання повнорозмірного фото
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Фото квартири ${title} - зображення ${index + 1}`;
+                img.className = index === 0 ? 'active' : '';
+                imagesContainer.appendChild(img);
 
-        function showDetails(title, images, description) {
-            const modal = document.getElementById('detailsModal');
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-
-            const imagesContainer = document.getElementById('modalImages');
-            const thumbnailsContainer = document.getElementById('modalThumbnails');
-            imagesContainer.innerHTML = '<button class="nav-arrow left" onclick="prevImage()">◀</button><button class="nav-arrow right" onclick="nextImage()">▶</button>';
-            thumbnailsContainer.innerHTML = '';
-
-            images.forEach((src, index) => {
-                if (src) {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = `Фото квартири ${title} - зображення ${index + 1}`;
-                    img.className = index === 0 ? 'active' : '';
-                    imagesContainer.appendChild(img);
-
-                    const thumb = document.createElement('img');
-                    thumb.src = src;
-                    thumb.alt = `Мініатюра квартири ${title} - зображення ${index + 1}`;
-                    thumb.className = index === 0 ? 'active' : '';
-                    thumb.onclick = () => switchImage(index);
-                    thumbnailsContainer.appendChild(thumb);
-                }
-            });
-
-            currentImageIndex = 0;
-            updateArrows(images.length);
-            modal.style.display = 'flex';
-
-            modal.onclick = function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            };
-        }
-
-        function closeModal() {
-            document.getElementById('detailsModal').style.display = 'none';
-        }
-
-        function switchImage(index) {
-            const images = document.querySelectorAll('#modalImages img');
-            const thumbs = document.querySelectorAll('#modalThumbnails img');
-            images.forEach(img => img.classList.remove('active'));
-            thumbs.forEach(thumb => thumb.classList.remove('active'));
-            images[index].classList.add('active');
-            thumbs[index].classList.add('active');
-            currentImageIndex = index;
-            updateArrows(images.length);
-        }
-
-        function prevImage() {
-            if (currentImageIndex > 0) {
-                switchImage(currentImageIndex - 1);
+                // Додавання мініатюри
+                const thumb = document.createElement('img');
+                thumb.src = src;
+                thumb.alt = `Мініатюра квартири ${title} - зображення ${index + 1}`;
+                thumb.className = index === 0 ? 'active' : '';
+                thumb.onclick = () => switchImage(index);
+                thumbnailsContainer.appendChild(thumb);
             }
-        }
+        });
 
-        function nextImage() {
-            const images = document.querySelectorAll('#modalImages img');
-            if (currentImageIndex < images.length - 1) {
-                switchImage(currentImageIndex + 1);
+        currentImageIndex = 0;
+        updateArrows(images.length);
+        modal.style.display = 'flex';
+
+        // Закриття при кліку на фон
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
             }
-        }
+        };
+    }
 
-        function updateArrows(totalImages) {
-            const leftArrow = document.querySelector('.nav-arrow.left');
-            const rightArrow = document.querySelector('.nav-arrow.right');
+    function closeModal() {
+        document.getElementById('detailsModal').style.display = 'none';
+    }
+
+    /**
+     * Перемикання зображень у галереї
+     */
+    function switchImage(index) {
+        const images = document.querySelectorAll('#modalImages img');
+        const thumbs = document.querySelectorAll('#modalThumbnails img');
+        
+        if (images.length === 0) return;
+
+        images.forEach(img => img.classList.remove('active'));
+        thumbs.forEach(thumb => thumb.classList.remove('active'));
+        
+        images[index].classList.add('active');
+        thumbs[index].classList.add('active');
+        
+        currentImageIndex = index;
+        updateArrows(images.length);
+    }
+
+    function prevImage() {
+        if (currentImageIndex > 0) {
+            switchImage(currentImageIndex - 1);
+        }
+    }
+
+    function nextImage() {
+        const images = document.querySelectorAll('#modalImages img');
+        if (currentImageIndex < images.length - 1) {
+            switchImage(currentImageIndex + 1);
+        }
+    }
+
+    /**
+     * Оновлення видимості стрілок навігації
+     */
+    function updateArrows(totalImages) {
+        const leftArrow = document.querySelector('.nav-arrow.left');
+        const rightArrow = document.querySelector('.nav-arrow.right');
+        if (leftArrow && rightArrow) {
             leftArrow.style.display = currentImageIndex === 0 ? 'none' : 'block';
             rightArrow.style.display = currentImageIndex === totalImages - 1 ? 'none' : 'block';
         }
+    }
 
-        showSection('listings');
+    // Запуск ініціалізації при завантаженні
+    initPage();
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && document.getElementById('detailsModal').style.display === 'flex') {
-                closeModal();
-            }
-        });
-    </script>
+    // Гарячі клавіші для зручності
+    document.addEventListener('keydown', function(event) {
+        const modal = document.getElementById('detailsModal');
+        if (modal.style.display === 'flex') {
+            if (event.key === 'Escape') closeModal();
+            if (event.key === 'ArrowLeft') prevImage();
+            if (event.key === 'ArrowRight') nextImage();
+        }
+    });
+</script>
 </body>
 </html>
+
 
 
 
