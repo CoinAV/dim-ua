@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Головна сторінка -->
     <url>
         <loc>https://21000.online/</loc>
         <lastmod>2026-01-21</lastmod>
@@ -8,140 +7,59 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Сторінка "Наші послуги" -->
     <url>
-        <loc>https://21000.online/about</loc>
-        <lastmod>2025-03-24</lastmod>
+        <loc>https://21000.online/about.html</loc>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Сторінка "Контакти" -->
     <url>
-        <loc>https://21000.online/contacts</loc>
-        <lastmod>2025-03-24</lastmod>
+        <loc>https://21000.online/contacts.html</loc>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Окремі сторінки для деталей оголошень -->
     <url>
         <loc>https://21000.online/realty-prodaja-kvartira-vinnitsa-leninskaya-mayborody-7.html</loc>
-        <lastmod>2025-04-15</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
-     <url>
+    <url>
         <loc>https://21000.online/realty-prodaja-kvartira-vinnitsa-staryy-gorod-marii-primachenko-pokryshkina-ulitsa-19.html</loc>
-        <lastmod>2025-04-10</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://21000.online/realty-prodaja-kvartira-vinnitsa-kievskaya-pavla-kornelyuka-stanislavskogo-proezd_18.html</loc>
-        <lastmod>2025-04-10</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
-     <url>
+    <url>
         <loc>https://21000.online/property-details-15.html</loc>
-        <lastmod>2025-03-28</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://21000.online/property-details-14.html</loc>
-        <lastmod>2025-03-28</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://21000.online/land-for-sale-ksaverivka-12-sotok.html</loc>
-        <lastmod>2025-03-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-14</loc>
-        <lastmod>2025-03-24</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://21000.online/property-details-13.html</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-12</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-11</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-10</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-9</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-8</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-7</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-6</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-5</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-4</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-3</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-2</loc>
-        <lastmod>2025-03-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://21000.online/#details-1</loc>
-        <lastmod>2025-03-24</lastmod>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
