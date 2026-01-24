@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вишенька чи Поділля? Де краще жити у Вінниці | 21000.online</title>
+    <meta name="description" content="Порівняння найпопулярніших районів Вінниці: Вишенька проти Поділля. Ціни на житло, інфраструктура, транспорт та комфорт.">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-21000-online.svg">
+	<link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- БАЗОВІ СТИЛІ --- */
+        :root {
+            --primary-color: #1e7e34;
+            --primary-hover: #155724;
+            --text-dark: #1A1A1A;
+            --bg-light: #F8F8F8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.8; }
+
+        /* --- NAVBAR --- */
+        nav { position: sticky; top: 0; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 15px 20px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; text-decoration: none; color: var(--primary-color); font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .burger { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; }
+
+/* Контейнер для тексту */
+.logo-group {
+    display: flex;
+    flex-direction: column; /* Розміщує назву НАД слоганом */
+    justify-content: center;
+    margin-left: 12px;      /* Відступ тексту від картинки */
+    line-height: 1.1;       /* Зменшує висоту рядків, щоб текст був компактним */
+}
+
+/* Назва бренду */
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Або темний колір #333 */
+    text-transform: uppercase;   /* Можна зробити великими літерами */
+    
+    /* Ефект об'єму, про який ви просили раніше */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); 
+}
+
+/* Слоган */
+.slogan {
+    font-size: 0.75rem;     /* Дрібніший шрифт */
+    color: #666;            /* Сірий колір, щоб не сперечався з назвою */
+    font-weight: 400;
+    letter-spacing: 0.5px;  /* Трохи розтягнути літери для читабельності */
+}
+
+/* Адаптивність: на дуже маленьких екранах (наприклад, iPhone SE) 
+   можна приховати слоган, щоб все влізло */
+@media (max-width: 360px) {
+    .slogan {
+        display: none;
+    }
+}
+
+        /* --- СТАТТЯ --- */
+        .article-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .breadcrumbs { font-size: 0.9rem; color: #888; margin-bottom: 20px; }
+        .breadcrumbs a { color: var(--primary-color); text-decoration: none; }
+
+        .article-header h1 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; margin-bottom: 10px; line-height: 1.3; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+
+        .article-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 30px; }
+
+        /* Стилі контенту */
+        .article-content p { margin-bottom: 20px; font-size: 1.1rem; color: #333; }
+        .article-content h2 { font-family: 'Poppins', sans-serif; font-size: 1.6rem; margin-top: 40px; margin-bottom: 15px; color: var(--primary-color); border-left: 4px solid var(--primary-color); padding-left: 15px; }
+        .article-content h3 { font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; color: #444; }
+        
+        .article-content ul { margin-bottom: 20px; padding-left: 20px; }
+        .article-content li { margin-bottom: 10px; }
+
+        /* Таблиця порівняння */
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 30px 0;
+            font-size: 1rem;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd; padding: 12px; text-align: left;
+        }
+        .comparison-table th { background-color: var(--primary-color); color: white; }
+        .comparison-table tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Плюси і мінуси */
+        .pros-cons { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .pc-block { flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        .pc-title { font-weight: bold; margin-bottom: 10px; display: block; font-size: 1.1rem; }
+        .pros .pc-title { color: #28a745; }
+        .cons .pc-title { color: #dc3545; }
+
+        .back-btn {
+            display: inline-block; margin-top: 30px; text-decoration: none;
+            color: var(--text-dark); font-weight: bold; padding: 10px 20px;
+            border: 1px solid #ddd; border-radius: 50px; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+
+        footer { background: #1A1A1A; color: #FFFFFF; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        
+		/* ДОДАЙТЕ ЦЕЙ БЛОК: */
+        .footer-links a {
+            color: #FFFFFF;          /* Робить посилання білими */
+            text-decoration: none;   /* Прибирає підкреслення */
+            margin: 0 15px;          /* Відступи між словами */
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color); /* Зелений колір при наведенні */
+        }
+		
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #FFF; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .burger { display: block; }
+            .article-container { padding: 20px; margin: 20px auto; }
+            .article-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+	
+	<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Вишенька чи Поділля? Огляд найкращих районів для життя у Вінниці",
+      "image": "https://placehold.co/800x400/1e7e34/ffffff?text=Вишенька+vs+Поділля",
+      "datePublished": "2026-01-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Аналітик 21000"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "21000 Нерухомість Вінниці",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://21000.online/assets/images/logo-21000-online.svg"
+        }
+      },
+      "description": "Порівняння цін, інфраструктури та комфорту двох найпопулярніших районів Вінниці: Вишеньки та Поділля."
+    }
+    </script>
+</head>
+<body>
+
+    <nav id="navbar">
+    <div class="nav-content">
+        <a href="/" class="logo">
+            <img src="assets/images/logo-21000-online.svg" alt="21000.online" width="50">
+            
+            <div class="logo-group">
+                <span class="brand-name">21000.online</span>
+                <span class="slogan">Нерухомість Вінниці</span>
+            </div>
+        </a>
+
+        <button class="burger" aria-label="Меню">☰</button>
+
+        <div class="nav-links">
+            <a href="/">Оголошення</a>
+            <a href="about.html">Про нас</a>
+            <a href="blog.html">Блог</a>
+            <a href="contacts.html">Контакти</a>
+            <a href="tel:+380633889856" style="color: var(--primary-color); font-weight: bold;">📞 (063) 388-98-56</a>
+        </div>
+    </div>
+</nav>
+
+    <article class="article-container">
+        <div class="breadcrumbs">
+            <a href="/">Головна</a> > <a href="blog.html">Блог</a> > <span>Вишенька vs Поділля</span>
+        </div>
+
+        <header class="article-header">
+            <h1>Вишенька чи Поділля? Огляд найкращих районів для життя у Вінниці</h1>
+            <div class="article-meta">
+                <span>📅 10 Січня 2026</span> • <span>✍️ Автор: Аналітик 21000</span>
+            </div>
+        </header>
+
+        <img src="https://placehold.co/800x400/1e7e34/ffffff?text=Вишенька+vs+Поділля" alt="Райони Вінниці" class="article-image">
+
+        <div class="article-content">
+            <p>Вибір району для життя – це завжди компроміс між ціною, комфортом та інфраструктурою. У Вінниці два беззаперечних лідери за популярністю серед покупців – це обжита "Вишенька" та сучасне "Поділля". Давайте розберемося, що підійде саме вам.</p>
+            
+            <h2>🍒 Район Вишенька</h2>
+            <p>Це класичний "спальний" район, який перетворився на повноцінне місто в місті. Тут є все: від ринків до торгових центрів.</p>
+            
+            <div class="pros-cons">
+                <div class="pc-block pros">
+                    <span class="pc-title">👍 Переваги</span>
+                    <ul>
+                        <li>Розвинена інфраструктура (школи, садки в кожному дворі).</li>
+                        <li>Чудова транспортна розв'язка (трамваї, тролейбуси в будь-яку точку).</li>
+                        <li>Багато зелені, алей та парків (Вишенське озеро, Парк Дружби народів).</li>
+                        <li>Більш доступні ціни на вторинне житло.</li>
+                    </ul>
+                </div>
+                <div class="pc-block cons">
+                    <span class="pc-title">👎 Недоліки</span>
+                    <ul>
+                        <li>Старий житловий фонд (багато "хрущовок" та панельок).</li>
+                        <li>Проблеми з паркуванням у старих дворах.</li>
+                        <li>Застарілі комунікації в деяких будинках.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>🏙 Район Поділля</h2>
+            <p>Один із найсучасніших та найпрестижніших районів міста. Це вибір тих, хто цінує естетику, нові комунікації та однорідне соціальне середовище.</p>
+
+            <div class="pros-cons">
+                <div class="pc-block pros">
+                    <span class="pc-title">👍 Переваги</span>
+                    <ul>
+                        <li>Тільки нові будинки з сучасними плануваннями.</li>
+                        <li>Автономне опалення майже у кожній квартирі.</li>
+                        <li>Красивий благоустрій, нові дитячі майданчики.</li>
+                        <li>Безпечне та престижне сусідство.</li>
+                    </ul>
+                </div>
+                <div class="pc-block cons">
+                    <span class="pc-title">👎 Недоліки</span>
+                    <ul>
+                        <li>Висока ціна за квадратний метр.</li>
+                        <li>Щільна забудова ("вікна у вікна").</li>
+                        <li>Перевантаженість шкіл та садочків через велику кількість молодих сімей.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>⚖️ Порівняльна таблиця</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Критерій</th>
+                        <th>Вишенька</th>
+                        <th>Поділля</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Середня ціна (1к кв)</strong></td>
+                        <td>$38,000 - $45,000</td>
+                        <td>$55,000 - $65,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Житловий фонд</strong></td>
+                        <td>Переважно 1970-1990 рр.</td>
+                        <td>З 2010 року і новіше</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Транспорт</strong></td>
+                        <td>⭐⭐⭐⭐⭐ (Відмінно)</td>
+                        <td>⭐⭐⭐⭐ (Добре)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Паркування</strong></td>
+                        <td>Складно</td>
+                        <td>Є паркінги, але платні</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Висновки</h2>
+            <p>Обирайте <strong>Вишеньку</strong>, якщо вам важливий простір, зелень, доступність транспорту та більш бюджетна вартість житла. Це ідеальний варіант для сімей, які шукають квартиру "тут і зараз" з готовою інфраструктурою.</p>
+            <p>Обирайте <strong>Поділля</strong>, якщо бюджет дозволяє, і ви хочете жити в сучасному будинку з індивідуальним опаленням, чистими під'їздами та молодими сусідами.</p>
+        </div>
+
+        <a href="blog.html" class="back-btn">← Повернутися до блогу</a>
+    </article>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Головна</a>
+            <a href="about.html">Про нас</a>
+            <a href="blog.html">Блог</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+        <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">© 2026 21000.online. Всі права захищено.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
