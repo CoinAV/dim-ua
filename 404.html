@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка не знайдена (404) | 21000.online</title>
+    
+    <meta name="robots" content="noindex, follow"> <link rel="icon" type="image/svg+xml" href="assets/images/logo-21000-online.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <meta name="theme-color" content="#1e7e34">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1e7e34;
+            --primary-hover: #155724;
+            --text-dark: #1A1A1A;
+            --text-gray: #666;
+            --bg-light: #F8F8F8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- NAVBAR (Такий самий, як на Головній) --- */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; text-decoration: none; color: var(--primary-color); font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .burger { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; }
+
+        .logo-group { display: flex; flex-direction: column; justify-content: center; margin-left: 12px; line-height: 1.1; }
+        .brand-name { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .slogan { font-size: 0.75rem; color: #666; font-weight: 400; letter-spacing: 0.5px; }
+
+        /* --- 404 CONTENT --- */
+        .error-container {
+            flex: 1; /* Розтягує блок на всю висоту */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 4px 4px 0px rgba(30, 126, 52, 0.1);
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--text-dark);
+        }
+
+        .error-desc {
+            max-width: 500px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(30, 126, 52, 0.3);
+        }
+
+        .home-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-links a { color: #FFF; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary-color); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 900px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #FFF; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .burger { display: block; }
+            .slogan { display: none; }
+            .error-code { font-size: 6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">
+                <img src="assets/images/logo-21000-online.svg" alt="21000.online" width="50">
+                <div class="logo-group">
+                    <span class="brand-name">21000.online</span>
+                    <span class="slogan">Нерухомість Вінниці</span>
+                </div>
+            </a>
+            <button class="burger" aria-label="Меню">☰</button>
+            <div class="nav-links">
+                <a href="/">Оголошення</a>
+                <a href="about.html">Про нас</a>
+                <a href="blog.html">Блог</a>
+                <a href="contacts.html">Контакти</a>
+                <a href="tel:+380633889856" style="color: var(--primary-color); font-weight: bold;">📞 (063) 388-98-56</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Упс! Ця сторінка зникла...</h1>
+        <p class="error-desc">
+            Можливо, ця квартира вже продана, або ви ввели неправильну адресу. 
+            Але не хвилюйтеся, у нас є ще багато чудових варіантів!
+        </p>
+        <a href="/" class="home-btn">🏠 Повернутися до оголошень</a>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Головна</a>
+            <a href="about.html">Про нас</a>
+            <a href="blog.html">Блог</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+        <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">© 2026 21000.online. Всі права захищено.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
