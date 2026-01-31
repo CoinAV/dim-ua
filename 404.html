@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка не знайдена (404) | 21000.online</title>
+    
+    <meta name="robots" content="noindex, follow"> <link rel="icon" type="image/svg+xml" href="assets/images/logo-21000-online.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <meta name="theme-color" content="#1e7e34">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">
+                <img src="assets/images/logo-21000-online.svg" alt="21000.online" width="50">
+                <div class="logo-group">
+                    <span class="brand-name">21000.online</span>
+                    <span class="slogan">Нерухомість Вінниці</span>
+                </div>
+            </a>
+            <button class="burger" aria-label="Меню">☰</button>
+            <div class="nav-links">
+                <a href="/">Оголошення</a>
+                <a href="about.html">Про нас</a>
+                <a href="blog.html">Блог</a>
+                <a href="contacts.html">Контакти</a>
+                <a href="tel:+380633889856" style="color: var(--primary-color); font-weight: bold;">📞 (063) 388-98-56</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Упс! Ця сторінка зникла...</h1>
+        <p class="error-desc">
+            Можливо, ця квартира вже продана, або ви ввели неправильну адресу. 
+            Але не хвилюйтеся, у нас є ще багато чудових варіантів!
+        </p>
+        <a href="/" class="home-btn">🏠 Повернутися до оголошень</a>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Головна</a>
+            <a href="about.html">Про нас</a>
+            <a href="blog.html">Блог</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+        <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">© 2026 21000.online. Всі права захищено.</p>
+    </footer>
+
+    <script>
+                /* --- Оновлене Мобільне меню (ідентичне до property-details) --- */
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (burger && navLinks) {
+            // 1. Клік по бургеру
+            burger.addEventListener('click', (e) => {
+                e.stopPropagation(); // Запобігаємо миттєвому закриттю
+                navLinks.classList.toggle('active');
+                
+                // Доступність
+                const isExpanded = navLinks.classList.contains('active');
+                burger.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // 2. Закриття при кліку поза межами меню
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('active')) {
+                    // Якщо клік НЕ по меню і НЕ по кнопці
+                    if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        burger.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            // 3. Закриття при кліку на посилання всередині меню
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    burger.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
