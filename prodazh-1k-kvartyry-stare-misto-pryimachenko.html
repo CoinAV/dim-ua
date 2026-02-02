@@ -57,7 +57,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Apartment",
       "name": "1-кімнатна квартира на вул. Марії Приймаченко, Вінниця",
       "image": [
         "https://21000.online/assets/images/kvartira-vinnitsa-staromisto-mariji-prijmachenko-2025-04-11-1.jpg",
@@ -66,12 +66,23 @@
         "https://21000.online/assets/images/kvartira-vinnitsa-staromisto-mariji-prijmachenko-2025-04-11-7.jpg"
       ],
       "description": "Простора 1-кімнатна квартира 58 м² на Старому Місті (вул. Марії Приймаченко). Євроремонт, індивідуальне опалення, меблі. Ціна $72,000.",
-      "sku": "19",
-      "mpn": "PROP-19-2026",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 58,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Вінниця",
+        "streetAddress": "вул. Марії Приймаченко",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.220000",
+        "longitude": "28.480000"
       },
       "offers": {
         "@type": "Offer",
@@ -80,19 +91,11 @@
         "price": "72000",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "8",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -513,4 +516,5 @@
 </script>
    
 </body>
+
 </html>
