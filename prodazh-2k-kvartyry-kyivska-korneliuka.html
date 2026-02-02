@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Apartment",
       "name": "2-кімнатна квартира на вул. Павла Корнелюка, Вінниця",
       "image": [
         "https://21000.online/assets/images/kvartira-vinnitsa-kievskaya-pavla-kornelyuka-2025-04-11-1.jpg",
@@ -65,12 +65,18 @@
         "https://21000.online/assets/images/kvartira-vinnitsa-kievskaya-pavla-kornelyuka-2025-04-11-5.jpg"
       ],
       "description": "Продається затишна 2-кімнатна квартира 33.7 м² у Вінниці (район Київська). Хороший ремонт, меблі, техніка. Ціна $37,700.",
-      "sku": "18",
-      "mpn": "PROP-18",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 2,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 33.7,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Вінниця",
+        "streetAddress": "вул. Павла Корнелюка",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
       },
       "offers": {
         "@type": "Offer",
@@ -79,19 +85,11 @@
         "price": "37700",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/UsedCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -490,4 +488,5 @@
 </script>
    
 </body>
+
 </html>
