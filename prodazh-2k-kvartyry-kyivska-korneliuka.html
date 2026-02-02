@@ -391,108 +391,19 @@
         </style>
     </noscript>
 
-   <script>
-    // --- ПРОСТА ГАЛЕРЕЯ ---
-    let currentImg = 0;
-    const imgs = document.querySelectorAll('.gallery-container img');
+      <script src="js/script.js"></script>
+	
+	<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
     
-    function showImg(n) {
-        if(imgs[currentImg]) {
-            imgs[currentImg].classList.remove('active');
-        }
-        currentImg = (n + imgs.length) % imgs.length;
-        if(imgs[currentImg]) {
-            imgs[currentImg].classList.add('active');
-        }
-    }
-    
-    function nextImage() { showImg(currentImg + 1); }
-    function prevImage() { showImg(currentImg - 1); }
-    
-    // --- ЛОГІКА СВАЙПУ ---
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const gallery = document.querySelector('.gallery-container');
-    
-    if (gallery) {
-        gallery.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        gallery.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-    }
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) nextImage(); 
-        if (touchEndX > touchStartX + swipeThreshold) prevImage(); 
-    }
-    
-    // --- КЛАВІАТУРНА НАВІГАЦІЯ ---
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prevImage();
-        if (e.key === 'ArrowRight') nextImage();
-    });
-    
-    // --- БУРГЕР МЕНЮ + ЗАКРИТТЯ ПО КЛІКУ ЗА МЕЖАМИ ---
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (burger && navLinks) {
-        // 1. Відкриття/Закриття при кліку на іконку
-        burger.addEventListener('click', (e) => {
-            e.stopPropagation(); // Важливо: запобігає миттєвому закриттю
-            navLinks.classList.toggle('active');
-            
-            const isExpanded = navLinks.classList.contains('active');
-            burger.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // 2. Закриття при кліку поза межами меню
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active')) {
-                // Якщо клік був НЕ по меню і НЕ по кнопці
-                if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    burger.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-
-        // 3. Закриття при кліку на посилання всередині меню
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                burger.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
-    
-    // --- ЛОГІКА КНОПОК ТЕЛЕФОНУ ---
-    const phoneNumber = "(063) 388-98-56";
-    const desktopCallBtn = document.getElementById('btn-call-desktop');
-    const desktopViberBtn = document.getElementById('btn-viber-desktop');
-    
-    function showNumber(event, btn, prefix = "📞 ") {
-        if (window.innerWidth > 900) {
-            event.preventDefault();
-            btn.innerText = prefix + phoneNumber;
-            btn.style.backgroundColor = "#1A1A1A";
-            btn.style.cursor = "default";
-        }
-    }
-    
-    if (desktopCallBtn) desktopCallBtn.addEventListener('click', (e) => showNumber(e, desktopCallBtn, "📞 "));
-    if (desktopViberBtn) desktopViberBtn.addEventListener('click', (e) => showNumber(e, desktopViberBtn, "📱 "));
-
-    // --- AUTO YEAR UPDATE ---
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+    <a class="modal-prev" onclick="changeModalSlide(-1)">&#10094;</a>
+    <a class="modal-next" onclick="changeModalSlide(1)">&#10095;</a>
+    </div>
    
 </body>
 
 </html>
+
 
