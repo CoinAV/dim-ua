@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Apartment",
       "name": "1-кімнатна квартира 48 м² у ЖК Сімейний Comfort",
       "image": [
         "https://21000.online/assets/images/apartment-N13-1-2025-03-26.jpg",
@@ -63,12 +63,23 @@
         "https://21000.online/assets/images/apartment-N13-3-2025-03-26.jpg"
       ],
       "description": "Сучасна 1-кімнатна квартира з дизайнерським євроремонтом у ЖК Сімейний Comfort. Простора світла кімната, велика кухня, підігрів підлоги, автономне газове опалення. Ціна $57,999.",
-      "sku": "13",
-      "mpn": "PROP-13",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 48,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Вінницькі Хутори",
+        "streetAddress": "Немирівське шосе",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.216667",
+        "longitude": "28.533333"
       },
       "offers": {
         "@type": "Offer",
@@ -77,19 +88,11 @@
         "price": "57999",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "10",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -465,4 +468,5 @@
 </script>
    
 </body>
+
 </html>
