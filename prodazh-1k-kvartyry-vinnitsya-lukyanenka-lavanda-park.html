@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Apartment",
       "name": "1-кімнатна квартира, ЖК Lavanda Park, Вінниця",
       "image": [
         "https://21000.online/assets/images/fasad-budynku-zhk-lavanda-park-vinnitsya-tyazhyliv.jpg",
@@ -65,12 +65,23 @@
         "https://21000.online/assets/images/planuvannya-poverkhu-zhk-lavanda-park-vinnitsya.jpg"
       ],
       "description": "Продаж 1-кімнатної квартири 42 м² у Вінниці (Тяжилів). ЖК Lavanda Park, цегляний будинок, індивідуальне опалення. Ціна $46,000.",
-      "sku": "33734268",
-      "mpn": "PROP-33734268",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 42,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Вінниця",
+        "streetAddress": "вул. Левка Лук’яненка",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.250000",
+        "longitude": "28.500000"
       },
       "offers": {
         "@type": "Offer",
@@ -79,19 +90,11 @@
         "price": "46000",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "5",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -486,4 +489,5 @@
 </script>
    
 </body>
+
 </html>
