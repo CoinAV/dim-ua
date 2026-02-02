@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "SingleFamilyResidence",
       "name": "Таунхаус 90 м² з ремонтом, Агрономічне",
       "image": [
         "https://21000.online/assets/images/townhouse-90m-1.jpg",
@@ -65,12 +65,22 @@
         "https://21000.online/assets/images/townhouse-90m-5.jpg"
       ],
       "description": "Продається стильний таунхаус 90 м² в Агрономічному. Повний євроремонт, меблі, техніка. Ділянка 2 сотки. Ціна $129,900.",
-      "sku": "17",
-      "mpn": "PROP-17",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 3,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 90,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Агрономічне",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.196000",
+        "longitude": "28.415000"
       },
       "offers": {
         "@type": "Offer",
@@ -79,19 +89,11 @@
         "price": "129900",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "4",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -493,4 +495,5 @@
 </script>
    
 </body>
+
 </html>
