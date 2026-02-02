@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "SingleFamilyResidence",
       "name": "Таунхаус 75 м², Якушинці (біля лісу)",
       "image": [
         "https://21000.online/assets/images/townhouse-N14-1-2025-03-30.jpg",
@@ -64,12 +64,23 @@
         "https://21000.online/assets/images/townhouse-N14-4-2025-03-30.jpg"
       ],
       "description": "Продається одноповерховий таунхаус 75 м² в Якушинцях. Чорновий стан, 2.5 сотки землі. Екологічно чисте місце біля лісу. Ціна $41,000.",
-      "sku": "14",
-      "mpn": "PROP-14",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 3,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 75,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Якушинці",
+        "streetAddress": "масив Тімірязєва",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.270000",
+        "longitude": "28.380000"
       },
       "offers": {
         "@type": "Offer",
@@ -78,19 +89,11 @@
         "price": "41000",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "7",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
@@ -480,4 +483,5 @@
 </script>
    
 </body>
+
 </html>
