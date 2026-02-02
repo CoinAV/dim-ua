@@ -427,129 +427,16 @@
         </style>
     </noscript>
 
-   <script>
-    // --- ПРОСТА ГАЛЕРЕЯ (ЯК У СТАРІЙ ВЕРСІЇ) ---
-    
-    let currentImg = 0;
-    // Знаходимо всі картинки всередині контейнера
-    const imgs = document.querySelectorAll('.gallery-container img');
-    
-    function showImg(n) {
-        // Прибираємо клас active з поточної картинки
-        if(imgs[currentImg]) {
-            imgs[currentImg].classList.remove('active');
-        }
-        
-        // Вираховуємо новий індекс (зациклено)
-        currentImg = (n + imgs.length) % imgs.length;
-        
-        // Додаємо клас active новій картинці
-        if(imgs[currentImg]) {
-            imgs[currentImg].classList.add('active');
-        }
-    }
-    
-    function nextImage() { showImg(currentImg + 1); }
-    function prevImage() { showImg(currentImg - 1); }
-    
-    // --- ЛОГІКА СВАЙПУ ---
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const gallery = document.querySelector('.gallery-container');
-    
-    if (gallery) {
-        gallery.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        gallery.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-    }
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        
-        if (touchEndX < touchStartX - swipeThreshold) {
-            nextImage(); 
-        }
-        
-        if (touchEndX > touchStartX + swipeThreshold) {
-            prevImage(); 
-        }
-    }
-    
-    // --- КЛАВІАТУРНА НАВІГАЦІЯ (НОВЕ!) ---
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevImage();
-        }
-        if (e.key === 'ArrowRight') {
-            nextImage();
-        }
-    });
-    
-    /* --- БУРГЕР МЕНЮ + ЗАКРИТТЯ ПО КЛІКУ ЗА МЕЖАМИ --- */
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (burger && navLinks) {
-        // 1. Відкриття/Закриття при кліку на іконку
-        burger.addEventListener('click', (e) => {
-            // Зупиняємо спливання, щоб клік по бургеру не вважався "кліком зовні" миттєво
-            e.stopPropagation(); 
-            navLinks.classList.toggle('active');
-            
-            const isExpanded = navLinks.classList.contains('active');
-            burger.setAttribute('aria-expanded', isExpanded);
-        });
+  <script src="script.js"></script>
 
-        // 2. Закриття при кліку в будь-яке інше місце документу
-        document.addEventListener('click', (e) => {
-            // Якщо меню відкрите...
-            if (navLinks.classList.contains('active')) {
-                // ...і клік був НЕ по меню і НЕ по кнопці бургера
-                if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    burger.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
+    <!-- Lightbox (Модальне вікно перегляду фото) -->
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Перегляд фото">
+        <button type="button" class="close-modal" aria-label="Закрити">&times;</button>
+        <img class="modal-content" id="modalImage" alt="">
 
-        // 3. (Опціонально) Закриття меню при кліку на будь-яке посилання всередині меню
-        // Це зручно: клікнув на "Контакти" -> меню зникло, сторінка прокрутилась
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                burger.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
-	
-	
-    // --- ЛОГІКА КНОПОК ТЕЛЕФОНУ (ПОКАЗАТИ НОМЕР НА ПК) ---
-    const phoneNumber = "(063) 388-98-56";
-    const desktopCallBtn = document.getElementById('btn-call-desktop');
-    const desktopViberBtn = document.getElementById('btn-viber-desktop');
-    
-    function showNumber(event, btn, prefix = "📞 ") {
-        if (window.innerWidth > 900) {
-            event.preventDefault();
-            btn.innerText = prefix + phoneNumber;
-            btn.style.backgroundColor = "#1A1A1A";
-            btn.style.cursor = "default";
-        }
-    }
-    
-    if (desktopCallBtn) {
-        desktopCallBtn.addEventListener('click', (e) => showNumber(e, desktopCallBtn, "📞 "));
-    }
-    
-    if (desktopViberBtn) {
-        desktopViberBtn.addEventListener('click', (e) => showNumber(e, desktopViberBtn, "📱 "));
-    }
-</script>
+        <button type="button" class="modal-prev" onclick="changeModalSlide(-1)" aria-label="Попереднє фото">&#10094;</button>
+        <button type="button" class="modal-next" onclick="changeModalSlide(1)" aria-label="Наступне фото">&#10095;</button>
+    </div>
    
 </body>
 </html>
