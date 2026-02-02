@@ -428,14 +428,14 @@
     </noscript>
 
   <script src="js/script.js"></script>
-
-    <!-- Lightbox (Модальне вікно перегляду фото) -->
-    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Перегляд фото">
-        <button type="button" class="close-modal" aria-label="Закрити">&times;</button>
-        <img class="modal-content" id="modalImage" alt="">
-
-        <button type="button" class="modal-prev" onclick="changeModalSlide(-1)" aria-label="Попереднє фото">&#10094;</button>
-        <button type="button" class="modal-next" onclick="changeModalSlide(1)" aria-label="Наступне фото">&#10095;</button>
+	
+	<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+    
+    <a class="modal-prev" onclick="changeModalSlide(-1)">&#10094;</a>
+    <a class="modal-next" onclick="changeModalSlide(1)">&#10095;</a>
     </div>
    
 </body>
