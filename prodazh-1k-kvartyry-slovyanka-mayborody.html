@@ -65,11 +65,11 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
-    <!-- Structured Data: Product -->
+    <!-- Structured Data: Apartment -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Apartment",
       "name": "1-кімнатна квартира на вул. Майбороди 7, Вінниця",
       "image": [
         "https://21000.online/assets/images/kvartira-vinnitsa-leninskaya-mayborody-2025-04-15-1.jpg",
@@ -79,12 +79,23 @@
         "https://21000.online/assets/images/kvartira-vinnitsa-leninskaya-mayborody-2025-04-15-5.jpg"
       ],
       "description": "Продається сучасна 1-кімнатна квартира 32 м² у Вінниці (Верхня Слов'янка, біля Медуніверситету). Євроремонт, меблі, техніка. Ціна $49,500.",
-      "sku": "20",
-      "mpn": "PROP-20-2026",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "numberOfRooms": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 32,
+        "unitCode": "MTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Вінниця",
+        "streetAddress": "вул. Майбороди 7",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.233035",
+        "longitude": "28.442611"
       },
       "offers": {
         "@type": "Offer",
@@ -93,19 +104,11 @@
         "price": "49500",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "12",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
