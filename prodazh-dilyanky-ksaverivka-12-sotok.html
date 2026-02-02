@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Place",
       "name": "Земельна ділянка 12 соток, с. Ксаверівка",
       "image": [
         "https://21000.online/assets/images/land-N15-2-2025-03-26.jpg",
@@ -64,12 +64,22 @@
         "https://21000.online/assets/images/land-N15-4-2025-03-26.jpg"
       ],
       "description": "Продаж земельної ділянки 12 соток у с. Ксаверівка. Призначення: сільське господарство/садівництво. Рівна ділянка, чорнозем. Ціна $5,000.",
-      "sku": "15",
-      "mpn": "PROP-15",
-      "brand": {
-        "@type": "Organization",
-        "name": "21000 Нерухомість",
-        "url": "https://21000.online"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ксаверівка",
+        "streetAddress": "вул. Зарічна",
+        "addressRegion": "Вінницька область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.280000",
+        "longitude": "28.320000"
+      },
+      "additionalProperty": {
+        "@type": "PropertyValue",
+        "name": "Площа ділянки",
+        "value": "12 соток"
       },
       "offers": {
         "@type": "Offer",
@@ -78,19 +88,11 @@
         "price": "5000",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
         "seller": {
-          "@type": "Organization",
+          "@type": "RealEstateAgent",
           "name": "21000.online",
           "telephone": "+380633889856"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
