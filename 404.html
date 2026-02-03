@@ -55,41 +55,7 @@
         <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">© 2026 21000.online. Всі права захищено.</p>
     </footer>
 
-    <script>
-                /* --- Оновлене Мобільне меню (ідентичне до property-details) --- */
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (burger && navLinks) {
-            // 1. Клік по бургеру
-            burger.addEventListener('click', (e) => {
-                e.stopPropagation(); // Запобігаємо миттєвому закриттю
-                navLinks.classList.toggle('active');
-                
-                // Доступність
-                const isExpanded = navLinks.classList.contains('active');
-                burger.setAttribute('aria-expanded', isExpanded);
-            });
-
-            // 2. Закриття при кліку поза межами меню
-            document.addEventListener('click', (e) => {
-                if (navLinks.classList.contains('active')) {
-                    // Якщо клік НЕ по меню і НЕ по кнопці
-                    if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
-                        navLinks.classList.remove('active');
-                        burger.setAttribute('aria-expanded', 'false');
-                    }
-                }
-            });
-
-            // 3. Закриття при кліку на посилання всередині меню
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    burger.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
-    </script>
+     <script src="js/properties.js"></script>
 </body>
+
 </html>
