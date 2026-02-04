@@ -210,11 +210,12 @@ function initGallery() {
 function initModalGallery() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption'); // <--- 1. ДОДАНО: Знаходимо елемент підпису
     const closeBtn = document.querySelector('.close-modal');
 
     if (!modal || !modalImg || !closeBtn) return;
 
-    // Accessibility (на випадок, якщо атрибути не проставлені в HTML)
+    // Accessibility
     modal.setAttribute('role', modal.getAttribute('role') || 'dialog');
     modal.setAttribute('aria-modal', modal.getAttribute('aria-modal') || 'true');
     modal.setAttribute('aria-hidden', modal.getAttribute('aria-hidden') || 'true');
@@ -227,16 +228,12 @@ function initModalGallery() {
 
     const openModal = (index) => {
         lastFocusedEl = document.activeElement;
-
         modal.style.display = 'block';
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-
         currentIndex = index;
         syncToGalleryIndex(currentIndex);
         updateModalImage();
-
-        // Переводимо фокус на кнопку закриття
         closeBtn.focus?.();
     };
 
@@ -244,8 +241,6 @@ function initModalGallery() {
         modal.style.display = 'none';
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = 'auto';
-
-        // Повертаємо фокус
         if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
             lastFocusedEl.focus();
         }
@@ -259,24 +254,26 @@ function initModalGallery() {
         if (currentIndex < 0) currentIndex = total - 1;
 
         modalImg.src = galleryImages[currentIndex].src;
-        modalImg.alt = galleryImages[currentIndex].alt || 'Фото об’єкта';
+        
+        // <--- 2. ДОДАНО: Логіка для тексту підпису
+        const text = galleryImages[currentIndex].alt || 'Фото об’єкта';
+        modalImg.alt = text;
+        if (modalCaption) {
+            modalCaption.textContent = text;
+        }
+        // ----------------------------------------
 
-        // Синхронізуємо активне фото в галереї
         syncToGalleryIndex(currentIndex);
     };
 
     const syncToGalleryIndex = (index) => {
-        // Оновлюємо currentImg і клас active через showImg()
         showImg(index);
     };
 
-    // Клік по кожному фото — відкриваємо модалку
+    // Events
     galleryImages.forEach((img, index) => {
         img.style.cursor = 'zoom-in';
-
         img.addEventListener('click', () => openModal(index));
-
-        // Keyboard: Enter/Space відкриває модалку
         if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
         img.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -286,28 +283,28 @@ function initModalGallery() {
         });
     });
 
-    // Кнопка закриття
     closeBtn.addEventListener('click', closeModal);
-
-    // Закриття при кліку по фону (поза картинкою)
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
 
-    // Глобальна функція для кнопок (onclick в HTML)
     window.changeModalSlide = function (n) {
         currentIndex += n;
         updateModalImage();
     };
 
-    // Touch swipe всередині модалки
+    // Кнопки навігації (доступні для клавіатури)
+    const prevBtn = modal.querySelector('.modal-prev');
+    const nextBtn = modal.querySelector('.modal-next');
+    if (prevBtn) prevBtn.addEventListener('click', () => window.changeModalSlide(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => window.changeModalSlide(1));
+
+    // Swipe inside modal
     let touchStartX = 0;
     let touchEndX = 0;
-
     modal.addEventListener('touchstart', function (e) {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
-
     modal.addEventListener('touchend', function (e) {
         touchEndX = e.changedTouches[0].screenX;
         const threshold = 50;
@@ -315,10 +312,32 @@ function initModalGallery() {
         if (touchEndX > touchStartX + threshold) window.changeModalSlide(-1);
     }, { passive: true });
 
-    // Keyboard у модалці (Esc, ArrowLeft/Right)
+    // Keyboard inside modal
     document.addEventListener('keydown', function (e) {
         const isOpen = modal.style.display === 'block';
         if (!isOpen) return;
+
+        // Trap focus всередині модалки
+        if (e.key === 'Tab') {
+            const focusable = Array.from(modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+            if (focusable.length > 0) {
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                    return;
+                }
+                if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                    return;
+                }
+            }
+        }
 
         if (e.key === 'Escape') {
             e.preventDefault();
@@ -360,21 +379,43 @@ function initRevealAnimations() {
    5. КНОПКИ ТЕЛЕФОНУ (Показ номера на Desktop)
    -------------------------------------------------------------------------- */
 function initPhoneButtons() {
-    const phoneNumber = "(063) 388-98-56";
+    // CTA: 1-й клік показує номер, 2-й клік — дзвінок (tel:)
+    const phoneDisplay = "(063) 388-98-56";
+    const phoneTel = "+380633889856";
+
     const desktopCallBtn = document.getElementById('btn-call-desktop');
-    const desktopViberBtn = document.getElementById('btn-viber-desktop');
+    const mobileCallBtn = document.querySelector('.mf-call');
     const orderCallBtn = document.getElementById('btn-order-call');
 
-    function showNumber(event, btn, prefix = "📞 ") {
-        if (window.innerWidth > 900) {
-            event.preventDefault();
-            btn.innerText = prefix + phoneNumber;
-            btn.style.backgroundColor = "#1A1A1A";
-            btn.style.cursor = "default";
-        }
-    }
+    const callButtons = [desktopCallBtn, mobileCallBtn, orderCallBtn].filter(Boolean);
 
-    if (desktopCallBtn) desktopCallBtn.addEventListener('click', (e) => showNumber(e, desktopCallBtn, "📞 "));
-    if (desktopViberBtn) desktopViberBtn.addEventListener('click', (e) => showNumber(e, desktopViberBtn, "📱 "));
-    if (orderCallBtn) orderCallBtn.addEventListener('click', (e) => showNumber(e, orderCallBtn, "📞 "));
+    callButtons.forEach((btn) => {
+        // Якщо в HTML вже заданий tel: — беремо його як джерело правди
+        const href = btn.getAttribute('href') || "";
+        const telFromHref = href.startsWith("tel:") ? href.replace("tel:", "").trim() : "";
+        const tel = (btn.dataset.phoneTel || telFromHref || phoneTel).trim();
+
+        // Важливо: href залишаємо tel:, але блокуємо 1-й клік через preventDefault()
+        if (!href.startsWith("tel:") && tel) {
+            btn.setAttribute("href", "tel:" + tel);
+        }
+
+        btn.dataset.revealed = btn.dataset.revealed || "0";
+        btn.dataset.phoneDisplay = btn.dataset.phoneDisplay || phoneDisplay;
+        btn.dataset.phoneTel = tel;
+
+        btn.addEventListener("click", (e) => {
+            const revealed = btn.dataset.revealed === "1";
+            if (!revealed) {
+                e.preventDefault(); // 1-й клік — не дзвонимо
+                btn.dataset.revealed = "1";
+
+                const display = btn.dataset.phoneDisplay || phoneDisplay;
+                btn.innerText = "📞 " + display;
+                btn.title = "Натисніть ще раз, щоб подзвонити";
+                btn.style.backgroundColor = "#1A1A1A";
+            }
+            // 2-й клік — дозволяємо стандартну дію (дзвінок)
+        }, { passive: false });
+    });
 }
