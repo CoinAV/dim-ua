@@ -354,32 +354,23 @@
                 </div>
 
                 <section class="agent-block">
+                    <a href="tel:+380633889856" class="contact-btn" id="btn-call-desktop" style="margin-bottom: 15px;"
+                        aria-label="Подзвонити менеджеру Жанні">
+                        📞 Показати номер
+                    </a>
+
                     <div class="agent-info">
                         <div>
-                            <p class="agent-name">Жанна</p> 
+                            <p class="agent-name">Жанна</p>
                             <p class="agent-stats" style="color: var(--primary-color);">
                                 ★ Експерт з нерухомості Вінниці
                             </p>
                         </div>
                     </div>
 
-                    <a href="tel:+380633889856" 
-                       class="contact-btn" 
-                       id="btn-call-desktop"
-                       aria-label="Подзвонити менеджеру Жанні">
-                        📞 Переглянути номер
-                    </a>
-                    <a href="viber://chat?number=%2B380633889856" 
-                       class="contact-btn viber" 
-                       id="btn-viber-desktop"
-                       rel="noopener noreferrer"
-                       aria-label="Написати у Viber менеджеру Жанні">
-                        💬 Написати у Viber
-                    </a>
-                    
                     <div class="agent-footer-details">
                         <div class="deal-info">
-                            <span class="obj-id" aria-label="Номер об'єкта">ID: <strong>19</strong></span>
+                            <span class="obj-id" aria-label="Номер об'єкта">ID: <strong>14</strong></span>
                             <span class="commission" aria-label="Комісія агентства">Комісія 5%</span>
                         </div>
                         <p class="working-hours">
@@ -402,9 +393,11 @@
         <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">© 2026 21000.online. Всі права захищено.</p>
     </footer>
 
+    <!-- Mobile Footer -->
     <div class="mobile-footer" role="navigation" aria-label="Мобільні контакти">
-        <a href="tel:+380633889856" class="mf-btn mf-call" aria-label="Подзвонити менеджеру">📞 Дзвонити</a>
-        <a href="viber://chat?number=%2B380633889856" class="mf-btn mf-viber" rel="noopener noreferrer" aria-label="Написати у Viber">💬 Viber</a>
+        <a href="tel:+380633889856" class="mf-btn mf-call" aria-label="Подзвонити менеджеру">📞 Номер тел.</a>
+        <a href="viber://chat?number=%2B380633889856" class="mf-btn mf-viber" rel="noopener noreferrer"
+            aria-label="Написати у Viber">💬 Viber</a>
     </div>
     
     <noscript>
@@ -420,16 +413,17 @@
    <script src="js/script.js"></script>
 	
 	<div id="imageModal" class="modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div class="modal-caption" id="modalCaption"></div>
-    
-    <a class="modal-prev" onclick="changeModalSlide(-1)">&#10094;</a>
-    <a class="modal-next" onclick="changeModalSlide(1)">&#10095;</a>
+        <button type="button" class="close-modal" aria-label="Закрити модальне вікно">×</button>
+        <img class="modal-content" id="modalImage" alt="">
+        <div class="modal-caption" id="modalCaption"></div>
+
+        <button type="button" class="modal-prev" aria-label="Попереднє фото">❮</button>
+        <button type="button" class="modal-next" aria-label="Наступне фото">❯</button>
     </div>
    
 </body>
 
 </html>
+
 
 
