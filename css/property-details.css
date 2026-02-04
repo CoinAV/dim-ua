@@ -995,6 +995,36 @@ footer {
     animation: zoomIn 0.3s;
 }
 
+/* Стилі для підпису під фото */
+.modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: #f1f1f1; /* Білий колір тексту */
+    padding: 15px 0;
+    height: auto;
+    
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    
+    /* Анімація появи разом з фото */
+    animation: zoomIn 0.3s; 
+}
+
+/* Адаптація підпису для мобільних */
+@media only screen and (max-width: 700px) {
+    .modal-caption {
+        width: 95%;     /* Ширший блок на мобільному */
+        font-size: 0.9rem; /* Трохи менший шрифт */
+        padding: 10px 0;
+    }
+}
+
 @keyframes zoomIn {
     from {transform:scale(0)} 
     to {transform:scale(1)}
