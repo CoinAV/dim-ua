@@ -1,0 +1,241 @@
+/**
+ * Gallery Module
+ * Handles slideshow, modal lightbox, swipe gestures, and keyboard navigation.
+ */
+
+let currentImg = 0;
+
+function showImg(n) {
+    const imgs = document.querySelectorAll('.gallery-container img');
+    if (!imgs || imgs.length === 0) return;
+
+    if (imgs[currentImg]) imgs[currentImg].classList.remove('active');
+
+    currentImg = (n + imgs.length) % imgs.length;
+
+    if (imgs[currentImg]) imgs[currentImg].classList.add('active');
+}
+
+export function initGalleryNavigation() {
+    const prevBtns = document.querySelectorAll('.nav-arrow.left');
+    const nextBtns = document.querySelectorAll('.nav-arrow.right');
+
+    const nextImage = () => showImg(currentImg + 1);
+    const prevImage = () => showImg(currentImg - 1);
+
+    // Attach to all buttons found
+    nextBtns.forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextImage();
+    }));
+
+    prevBtns.forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevImage();
+    }));
+
+    // Expose for compatibility if needed, or keeping internal mostly
+    window.galleryNext = nextImage;
+    window.galleryPrev = prevImage;
+    window.prevImage = prevImage; // Used by swipe logic if checking window
+    window.nextImage = nextImage;
+}
+
+export function initGallery() {
+    const galleryContainer = document.querySelector('.gallery-container');
+    if (!galleryContainer) return;
+
+    // Accessibility
+    if (!galleryContainer.hasAttribute('tabindex')) {
+        galleryContainer.setAttribute('tabindex', '0');
+    }
+
+    // Init active state
+    const imgs = document.querySelectorAll('.gallery-container img');
+    if (imgs.length > 0) {
+        const hasActive = Array.from(imgs).some(img => img.classList.contains('active'));
+        if (!hasActive) imgs[0].classList.add('active');
+        currentImg = Math.max(0, Array.from(imgs).findIndex(img => img.classList.contains('active')));
+    }
+
+    // Swipe
+    let touchStartX = 0;
+
+    galleryContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    galleryContainer.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) showImg(currentImg + 1);
+        if (touchEndX > touchStartX + swipeThreshold) showImg(currentImg - 1);
+    }, { passive: true });
+
+    // Keyboard
+    galleryContainer.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('imageModal');
+        const isModalOpen = modal && modal.style.display === 'block';
+        if (isModalOpen) return;
+
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            showImg(currentImg - 1);
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            showImg(currentImg + 1);
+        }
+    });
+
+    // Make showImg available to the module scope functions
+}
+
+export function initModalGallery() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.close-modal');
+
+    if (!modal || !modalImg || !closeBtn) return;
+
+    // Accessibility
+    modal.setAttribute('role', modal.getAttribute('role') || 'dialog');
+    modal.setAttribute('aria-modal', modal.getAttribute('aria-modal') || 'true');
+    modal.setAttribute('aria-hidden', modal.getAttribute('aria-hidden') || 'true');
+
+    const galleryImages = document.querySelectorAll('.gallery-container img');
+    if (!galleryImages || galleryImages.length === 0) return;
+
+    let currentIndex = 0;
+    let lastFocusedEl = null;
+
+    const syncToGalleryIndex = (index) => {
+        showImg(index);
+    };
+
+    const updateModalImage = () => {
+        const total = galleryImages.length;
+        if (total === 0) return;
+
+        // Wrap around
+        if (currentIndex >= total) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = total - 1;
+
+        modalImg.src = galleryImages[currentIndex].src;
+
+        const text = galleryImages[currentIndex].alt || 'Фото об’єкта';
+        modalImg.alt = text;
+        if (modalCaption) {
+            modalCaption.textContent = text;
+        }
+
+        syncToGalleryIndex(currentIndex);
+    };
+
+    const openModal = (index) => {
+        lastFocusedEl = document.activeElement;
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        currentIndex = index;
+        syncToGalleryIndex(currentIndex);
+        updateModalImage();
+        closeBtn.focus?.();
+    };
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+        if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+            lastFocusedEl.focus();
+        }
+    };
+
+    const changeModalSlide = (n) => {
+        currentIndex += n;
+        updateModalImage();
+    };
+
+    // Events
+    galleryImages.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openModal(index));
+        if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
+        img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(index);
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Modal Navigation Buttons
+    const prevBtn = modal.querySelector('.modal-prev');
+    const nextBtn = modal.querySelector('.modal-next');
+    if (prevBtn) prevBtn.addEventListener('click', () => changeModalSlide(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => changeModalSlide(1));
+
+    // Expose for window if needed (but try to avoid)
+    window.changeModalSlide = changeModalSlide;
+
+    // Swipe inside modal
+    let touchStartX = 0;
+    modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) changeModalSlide(1);
+        if (touchEndX > touchStartX + threshold) changeModalSlide(-1);
+    }, { passive: true });
+
+    // Keyboard inside modal
+    document.addEventListener('keydown', (e) => {
+        const isOpen = modal.style.display === 'block';
+        if (!isOpen) return;
+
+        // Focus trap
+        if (e.key === 'Tab') {
+            const focusable = Array.from(modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+            if (focusable.length > 0) {
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                    return;
+                }
+                if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                    return;
+                }
+            }
+        }
+
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeModal();
+        }
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            changeModalSlide(-1);
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            changeModalSlide(1);
+        }
+    });
+}
