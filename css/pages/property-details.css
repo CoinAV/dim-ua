@@ -1,0 +1,704 @@
+@charset "UTF-8";
+
+/* --- BREADCRUMBS --- */
+.breadcrumbs {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    background: transparent;
+    box-shadow: none;
+}
+
+.breadcrumbs {
+    z-index: var(--z-dropdown);
+    position: relative;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-gray);
+    transition: color var(--transition-normal);
+    position: relative;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* --- MAIN LAYOUT --- */
+.property-container {
+    max-width: 1200px;
+    margin: 20px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* Container Queries support */
+@supports (container-type: inline-size) {
+    .property-container {
+        container-type: inline-size;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- GALLERY --- */
+.gallery-card {
+    background: var(--card-bg, #FFFFFF);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: box-shadow var(--transition-normal);
+}
+
+.gallery-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #F8F8F8;
+    touch-action: pan-y;
+}
+
+.gallery-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    opacity: 1;
+    transition: none;
+    z-index: var(--z-normal);
+}
+
+.gallery-container img.active {
+    display: block;
+    z-index: var(--z-normal);
+    /* was 2, now 1 is enough or needs 2? 2 > 1. Let's start with normal if context allows, or sticky? No, this is sticky-card content. */
+    /* wait, line 92 was 'z-index: 2;' and line 87 was 'z-index: 1;' */
+    /* If they are competing, we might need layers. But sticking to defined scale: */
+    /* If 2 was needed to be above 1, we can use z-normal (1). If they need differentiation, we need to be careful. */
+    /* Let's see context in next turn if unsure. But assuming scale is robust. */
+    z-index: 2;
+    /* Keeping strict values for minor layers if not in core scale */
+}
+
+/* Navigation arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: var(--z-dropdown);
+}
+
+.nav-arrow:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.nav-arrow:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.nav-arrow.left {
+    left: 15px;
+}
+
+.nav-arrow.right {
+    right: 15px;
+}
+
+.gallery-dots {
+    display: none;
+}
+
+/* --- CONTENT CARDS --- */
+.content-card {
+    background: var(--card-bg, #FFFFFF);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+}
+
+.content-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.content-card h2,
+.content-card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.content-card p {
+    margin-bottom: 15px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.content-card ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    color: #444;
+}
+
+.content-card li {
+    margin-bottom: 5px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* --- SIDEBAR (RIGHT COLUMN) --- */
+.sidebar {
+    position: relative;
+}
+
+.sticky-card {
+    position: sticky;
+    top: 100px;
+    background: var(--card-bg, #FFFFFF);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border-top: 5px solid var(--primary-color);
+}
+
+/* VERIFIED BADGE */
+.verified-badge {
+    display: inline-block;
+    background-color: #e6f4ea;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb;
+}
+
+.property-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Specifications */
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.spec-item {
+    background: #f0f7f2;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    will-change: transform;
+}
+
+.spec-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spec-item strong {
+    display: block;
+    color: var(--text-dark);
+}
+
+.spec-item span {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+/* EOSELYA BADGE */
+.eoselya-badge {
+    width: 100%;
+    text-align: center;
+    background: #fffbe6;
+    color: #856404;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border: 1px solid #ffeeba;
+}
+
+/* AGENT BLOCK */
+.agent-block {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.agent-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.agent-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+/* --- TOOLTIP STYLES --- */
+.commission {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: help;
+}
+
+.tip {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: transparent;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #666;
+}
+
+.tip-box {
+    position: absolute;
+    left: 50%;
+    bottom: 130%;
+    /* Position above */
+    transform: translateX(-50%);
+    width: min(260px, 85vw);
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    color: #333;
+    font-size: 12px;
+    text-align: left;
+    z-index: var(--z-dropdown);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Arrow for tooltip */
+.tip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Show on hover or focus */
+.commission:hover .tip-box,
+.tip:focus+.tip-box,
+.tip:hover+.tip-box {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+.agent-footer-details {
+    width: fit-content;
+    max-width: 100%;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.deal-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.working-hours {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+}
+
+@media (max-width: 360px) {
+    .deal-info {
+        flex-wrap: wrap;
+        gap: 8px 14px;
+    }
+}
+
+/* Contact Button */
+.contact-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 6px rgba(30, 126, 52, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.contact-btn:hover,
+.contact-btn:focus {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(30, 126, 52, 0.3);
+    outline: none;
+}
+
+.contact-btn.viber {
+    background: #7360f2;
+    box-shadow: 0 4px 6px rgba(115, 96, 242, 0.2);
+}
+
+.contact-btn.viber:hover,
+.contact-btn.viber:focus {
+    background: #5a46d6;
+    box-shadow: 0 6px 12px rgba(115, 96, 242, 0.3);
+}
+
+.meta-info {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #999;
+}
+
+/* Related listings */
+.related-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-links li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    transition: transform var(--transition-fast);
+}
+
+.related-links li:hover {
+    transform: translateX(5px);
+}
+
+.related-links li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.related-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.related-links a:hover,
+.related-links a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* --- MOBILE FOOTER --- */
+.mobile-footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 2000;
+    /* Custom high z-index for this specific overlay? Or use specific var? */
+    /* 2000 is between Navbar (1000) and Modal (3000). Let's define --z-overlay-light? */
+    /* Or just leave 2000 for now if it's unique */
+    z-index: 2000;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.mf-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.mf-call {
+    background: var(--primary-color);
+    color: white;
+}
+
+.mf-viber {
+    background: #7360f2;
+    color: white;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    body {
+        padding-bottom: 80px;
+    }
+
+    .property-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content {
+        display: contents;
+        gap: 20px;
+    }
+
+    .gallery-card {
+        order: 1;
+        margin-bottom: 15px;
+    }
+
+    .gallery-container {
+        height: 300px;
+    }
+
+    .nav-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .sidebar {
+        order: 2;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content-card {
+        order: 3;
+        padding: 20px;
+    }
+
+    .sticky-card {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 20px;
+    }
+
+    .specs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+
+    .agent-block .contact-btn {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: flex;
+    }
+}
+
+/* --- LIGHTBOX (MODAL) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: var(--z-modal);
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 80vh;
+    object-fit: contain;
+    animation: zoomIn 0.3s;
+}
+
+.modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: #f1f1f1;
+    padding: 15px 0;
+    height: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    animation: zoomIn 0.3s;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-caption {
+        width: 95%;
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.close-modal {
+    position: absolute;
+    background: transparent;
+    border: none;
+    line-height: 1;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: var(--z-overlay);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-prev,
+.modal-next {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.modal-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+
+    .modal-prev,
+    .modal-next {
+        padding: 20px;
+        font-size: 40px;
+    }
+}
