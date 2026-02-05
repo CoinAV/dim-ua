@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+:root {
+    /* Colors */
+    --primary-color: #1e7e34;
+    --primary-hover: #155724;
+    --text-dark: #1A1A1A;
+    --text-gray: #666;
+    --bg-light: #F8F8F8;
+    --white: #FFFFFF;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-Index Scale */
+    --z-negative: -1;
+    --z-normal: 1;
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-navbar: 1000;
+    --z-modal: 3000;
+    --z-overlay: 3001;
+    --z-toast: 9999;
+    --z-skip-link: 10000;
+
+    /* Spacing Scale (5px Grid) */
+    --space-1: 5px;
+    --space-2: 10px;
+    --space-3: 15px;
+    --space-4: 20px;
+    --space-5: 25px;
+    --space-6: 30px;
+    --space-8: 40px;
+    --space-10: 50px;
+    --space-20: 100px;
+}
