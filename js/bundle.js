@@ -293,7 +293,7 @@
         const searchInput = document.getElementById('blogSearchInput');
         if (!searchInput) return;
 
-        const categoryBtns = document.querySelectorAll('.category-tag'); // Check class
+        const categoryBtns = document.querySelectorAll('.tag'); // Check class
         const blogCards = document.querySelectorAll('.blog-card'); // Check class
         const blogGrid = document.querySelector('.blog-grid');
 
@@ -308,7 +308,7 @@
 
         function filter() {
             const term = searchInput.value.toLowerCase().trim();
-            const activeBtn = document.querySelector('.category-tag.active');
+            const activeBtn = document.querySelector('.tag.active');
             const activeCat = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
             let count = 0;
 
@@ -414,3 +414,4 @@
     });
 
 })();
+
