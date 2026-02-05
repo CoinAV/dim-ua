@@ -84,7 +84,7 @@ export function initBlogSearch() {
     const searchInput = document.getElementById('blogSearchInput');
     if (!searchInput) return;
 
-    const categoryBtns = document.querySelectorAll('.category-tag'); // Note: class might change in tag refactor
+    const categoryBtns = document.querySelectorAll('.tag'); // Note: class might change in tag refactor
     const blogCards = document.querySelectorAll('.blog-card'); // Note: class might change
     const blogGrid = document.querySelector('.blog-grid');
 
@@ -99,7 +99,7 @@ export function initBlogSearch() {
 
     function filterContent() {
         const searchTerm = searchInput.value.toLowerCase().trim();
-        const activeBtn = document.querySelector('.category-tag.active');
+        const activeBtn = document.querySelector('.tag.active');
         const activeCategory = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
 
         let visibleCount = 0;
@@ -141,3 +141,4 @@ export function initBlogSearch() {
         });
     });
 }
+
