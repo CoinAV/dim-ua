@@ -1,0 +1,45 @@
+/* tags.css - Modular Tags Component (BEM) */
+@charset "UTF-8";
+
+.tag-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.2s ease 0.5s backwards;
+}
+
+.tag {
+    padding: var(--space-2) var(--space-4);
+    /* 10px 20px */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.tag:hover,
+.tag.active {
+    background: white;
+    color: var(--primary-color, #1e7e34);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .tag-list {
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}

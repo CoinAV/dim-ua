@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: var(--space-8) var(--space-4);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer__nav {
+    margin-bottom: 20px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.footer__nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+    padding: var(--space-1);
+    position: relative;
+}
+
+.footer__nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-fast);
+}
+
+.footer__nav a:hover::after,
+.footer__nav a:focus::after {
+    width: 100%;
+}
+
+.footer__nav a:hover,
+.footer__nav a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* --- COOKIE BANNER --- */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%;
+    /* Ховаємо за межами екрану спочатку */
+    left: 20px;
+    right: 20px;
+    /* Щоб не було на всю ширину на великих екранах */
+    max-width: 500px;
+    /* Обмеження ширини */
+    background: #ffffff;
+    padding: var(--space-4) var(--space-5);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    z-index: var(--z-toast);
+    /* Найвищий пріоритет, поверх всього */
+    border-left: 5px solid var(--primary-color);
+    /* Зелена смужка зліва */
+    transition: bottom 0.5s ease-in-out;
+}
+
+/* Клас для показу банера */
+.cookie-banner.show {
+    bottom: 20px;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cookie-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.cookie-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.cookie-banner p {
+    font-size: 0.9rem;
+    color: var(--text-dark, #333);
+    line-height: 1.5;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.cookie-btn {
+    background: var(--primary-color, #1e7e34);
+    color: #fff;
+    border: none;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    align-self: flex-end;
+    /* Кнопка праворуч */
+}
+
+.cookie-btn:hover {
+    background: var(--primary-hover, #155724);
+    transform: translateY(-2px);
+}
+
+/* Адаптація під мобільні телефони */
+@media (max-width: 600px) {
+    .cookie-banner {
+        left: 10px;
+        right: 10px;
+        bottom: -100%;
+        padding: var(--space-3);
+    }
+
+    .cookie-banner.show {
+        bottom: 80px;
+        /* Піднімаємо вище мобільного меню внизу */
+    }
+
+    .cookie-content {
+        flex-direction: row;
+        /* На мобільному в рядок, щоб економити місце */
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .cookie-text {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .cookie-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

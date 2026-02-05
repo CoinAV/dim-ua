@@ -1,0 +1,145 @@
+/* hero.css - ������������ ���� ��� Hero-������ (FINAL VERSION) */
+@charset "UTF-8";
+
+/* ============================================
+   0. �Ͳ��ֲ�
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   1. ������� HERO
+   ============================================ */
+
+.hero {
+    /* ������ �� ������� */
+    height: 55vh;
+    min-height: 450px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+
+    /* ��� �� ������������� (�������) */
+    background-image: url('../../assets/images/fon-dim-ua-2024.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* �������������� */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white, #ffffff);
+    overflow: hidden;
+}
+
+/*   (Overlay) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 0;
+}
+
+/*  */
+.hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: var(--space-4);
+    width: 100%;
+}
+
+/*  */
+.hero__content h1,
+.hero__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    color: white;
+    font-weight: 800;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* ϳ */
+.hero__content p,
+.hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+/* ============================================
+   2. Բ в (Modifiers)
+   ============================================ */
+
+/*  */
+.hero--blog {
+    background-image: url('../../assets/images/real-estate-blog-news-vinnytsia-1.webp');
+    height: auto;
+    min-height: 400px;
+    padding: var(--space-20) var(--space-4) 80px;
+}
+
+/*   */
+.hero--about {
+    background-image: url('../../assets/images/about-us-real-estate-agency-vinnytsia-1.webp');
+    height: auto;
+    min-height: 400px;
+    padding: var(--space-20) var(--space-4) 80px;
+}
+
+/*  */
+.hero--contacts {
+    background-image: url('../../assets/images/contacts-real-estate-agency-vinnytsia-1.webp');
+    height: auto;
+    min-height: 400px;
+    padding: var(--space-20) var(--space-4) 80px;
+}
+
+/* ============================================
+   3. RESPONSIVE
+   ============================================ */
+
+/*  */
+@media (max-width: 900px) {
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 85px 20px 60px 20px;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+}
+
+/*   */
+@media (max-width: 600px) {
+    .hero__title {
+        font-size: 1.8rem;
+    }
+}
