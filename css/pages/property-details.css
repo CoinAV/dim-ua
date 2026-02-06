@@ -702,3 +702,18 @@
         font-size: 40px;
     }
 }
+/* --- UTILITY-LIKE HELPERS FOR PROPERTY DETAILS (Replaces Inline Styles) --- */
+.info-box-success {
+    background: #e6f4ea;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.spec-item.highlight-warning {
+    width: 100%;
+    text-align: center;
+    background: #fffbe6;
+    color: #856404;
+    margin-bottom: 20px;
+}
