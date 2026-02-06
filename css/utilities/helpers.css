@@ -155,6 +155,10 @@
     border-bottom: 1px solid #eee !important;
 }
 
+.border-0 {
+    border: 0 !important;
+}
+
 /* Additional Utilities */
 .lh-18 {
     line-height: 1.8 !important;
@@ -168,7 +172,49 @@
     color: inherit !important;
 }
 
+/* ==================================== */
+/* NEW CLASSES FOR CSP COMPLIANCE */
+/* ==================================== */
 
-.border-0 {
-    border: 0 !important;
+/* Cookie Banner States */
+.cookie-banner--hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(100%) !important;
+}
+
+/* Modal States */
+.modal--open {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.no-scroll {
+    overflow: hidden !important;
+}
+
+/* Lightbox States */
+.lightbox--open {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Animation States */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.7 !important;
+    cursor: wait !important;
+    pointer-events: none !important;
+}
+
+/* Zoomable Images */
+.zoomable {
+    cursor: zoom-in !important;
 }
