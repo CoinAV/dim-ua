@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структура Проекту | 21000.online</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f4f4f9; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #1e7e34; border-bottom: 2px solid #1e7e34; padding-bottom: 10px; }
+        h2 { color: #2c3e50; margin-top: 30px; border-left: 5px solid #1e7e34; padding-left: 10px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .tree-box { background: #fafafa; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        ul { list-style-type: none; padding-left: 20px; }
+        li { margin: 5px 0; }
+        .folder { font-weight: bold; color: #d35400; }
+        .file { color: #2980b9; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
+        th { background-color: #1e7e34; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; }
+        
+        .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; margin-right: 5px; margin-bottom: 2px; }
+        .badge-css { background: #e8f4f8; color: #007bff; border: 1px solid #b8daff; }
+        .badge-js { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        
+        a { color: #1e7e34; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+    <link rel="stylesheet" href="css/utilities/helpers.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📁 Структура Проекту</h1>
+        <p>Автоматично згенерована документація архітектури файлів та залежностей.</p>
+        
+        <div class="grid">
+            <div class="tree-box">
+                <h2>🎨 CSS Структура (Styles)</h2>
+                <ul><li><span class='folder'>📁 components/</span><ul><li><span class='file'>📄 buttons.css</span></li><li><span class='file'>📄 buttons.min.css</span></li><li><span class='file'>📄 cards.css</span></li><li><span class='file'>📄 cards.min.css</span></li><li><span class='file'>📄 footer.css</span></li><li><span class='file'>📄 footer.min.css</span></li><li><span class='file'>📄 hero.css</span></li><li><span class='file'>📄 hero.min.css</span></li><li><span class='file'>📄 navbar.css</span></li><li><span class='file'>📄 navbar.min.css</span></li><li><span class='file'>📄 quick-links.css</span></li><li><span class='file'>📄 quick-links.min.css</span></li><li><span class='file'>📄 search-form.css</span></li><li><span class='file'>📄 search-form.min.css</span></li><li><span class='file'>📄 stats.css</span></li><li><span class='file'>📄 stats.min.css</span></li><li><span class='file'>📄 tags.css</span></li><li><span class='file'>📄 tags.min.css</span></li></ul></li><li><span class='folder'>📁 core/</span><ul><li><span class='file'>📄 01-variables.css</span></li><li><span class='file'>📄 01-variables.min.css</span></li><li><span class='file'>📄 02-reset.css</span></li><li><span class='file'>📄 02-reset.min.css</span></li><li><span class='file'>📄 03-animations.css</span></li><li><span class='file'>📄 03-animations.min.css</span></li></ul></li><li><span class='folder'>📁 pages/</span><ul><li><span class='file'>📄 404.css</span></li><li><span class='file'>📄 404.min.css</span></li><li><span class='file'>📄 about.css</span></li><li><span class='file'>📄 about.min.css</span></li><li><span class='file'>📄 article.css</span></li><li><span class='file'>📄 article.min.css</span></li><li><span class='file'>📄 blog.css</span></li><li><span class='file'>📄 blog.min.css</span></li><li><span class='file'>📄 contacts.css</span></li><li><span class='file'>📄 contacts.min.css</span></li><li><span class='file'>📄 home.css</span></li><li><span class='file'>📄 home.min.css</span></li><li><span class='file'>📄 property-details.css</span></li><li><span class='file'>📄 property-details.min.css</span></li></ul></li><li><span class='folder'>📁 utilities/</span><ul><li><span class='file'>📄 accessibility.css</span></li><li><span class='file'>📄 accessibility.min.css</span></li></ul></li></ul>
+            </div>
+            <div class="tree-box">
+                <h2>📜 JS Структура (Scripts)</h2>
+                <ul><li><span class='folder'>📁 modules/</span><ul><li><span class='file'>📄 gallery.js</span></li><li><span class='file'>📄 gallery.min.js</span></li><li><span class='file'>📄 navigation.js</span></li><li><span class='file'>📄 navigation.min.js</span></li><li><span class='file'>📄 search.js</span></li><li><span class='file'>📄 search.min.js</span></li><li><span class='file'>📄 utils.js</span></li><li><span class='file'>📄 utils.min.js</span></li></ul></li><li><span class='file'>📄 .gitkeep</span></li><li><span class='file'>📄 bundle.js</span></li><li><span class='file'>📄 main.js</span></li><li><span class='file'>📄 main.min.js</span></li><li><span class='file'>📄 script.js</span></li><li><span class='file'>📄 script.min.js</span></li></ul>
+            </div>
+        </div>
+
+        <h2>🔗 Залежності Сторінок</h2>
+        <p>Які стилі та скрипти підключає кожна HTML сторінка.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Сторінка (HTML)</th>
+                    <th>Підключені CSS</th>
+                    <th>Підключені JS</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><strong><a href="404.html" target="_blank">404.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/404.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="about.html" target="_blank">about.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/hero.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/about.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="article-check-list.html" target="_blank">article-check-list.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/article.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="article-districts.html" target="_blank">article-districts.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/article.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="article-investments.html" target="_blank">article-investments.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/article.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="article.html" target="_blank">article.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/article.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="blog.html" target="_blank">blog.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/hero.css</div><div class="badge badge-css">css/components/search-form.css</div><div class="badge badge-css">css/components/tags.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/blog.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="contacts.html" target="_blank">contacts.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/hero.css</div><div class="badge badge-css">css/components/quick-links.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/contacts.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="index.html" target="_blank">index.html</a></strong></td>
+                    <td><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/hero.css</div><div class="badge badge-css">css/components/search-form.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/home.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-1k-kvartyry-slovyanka-mayborody.html" target="_blank">prodazh-1k-kvartyry-slovyanka-mayborody.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-1k-kvartyry-stare-misto-pryimachenko.html" target="_blank">prodazh-1k-kvartyry-stare-misto-pryimachenko.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-1k-kvartyry-vinnitsya-lukyanenka-lavanda-park.html" target="_blank">prodazh-1k-kvartyry-vinnitsya-lukyanenka-lavanda-park.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-1k-kvartyry-zhk-simeinyi-comfort-vinnitski-hutory.html" target="_blank">prodazh-1k-kvartyry-zhk-simeinyi-comfort-vinnitski-hutory.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-2k-kvartyry-kyivska-korneliuka.html" target="_blank">prodazh-2k-kvartyry-kyivska-korneliuka.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-dilyanky-ksaverivka-12-sotok.html" target="_blank">prodazh-dilyanky-ksaverivka-12-sotok.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-taunhausa-ahronomichne-z-remontom-90m.html" target="_blank">prodazh-taunhausa-ahronomichne-z-remontom-90m.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+                <tr>
+                    <td><strong><a href="prodazh-taunhausa-yakushyntsi-bilya-lisu-75m.html" target="_blank">prodazh-taunhausa-yakushyntsi-bilya-lisu-75m.html</a></strong></td>
+                    <td><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/core/01-variables.css</div><div class="badge badge-css">css/core/02-reset.css</div><div class="badge badge-css">css/core/03-animations.css</div><div class="badge badge-css">css/components/navbar.css</div><div class="badge badge-css">css/components/footer.css</div><div class="badge badge-css">css/components/buttons.css</div><div class="badge badge-css">css/components/cards.css</div><div class="badge badge-css">css/pages/property-details.css</div><div class="badge badge-css">css/utilities/accessibility.css</div></td>
+                    <td><div class="badge badge-js">js/bundle.js</div></td>
+                </tr>
+        
+            </tbody>
+        </table>
+        
+        <footer class="mt-40 text-center text-gray fs-09">
+            Generated by Antigravity Agent &bull; 2026
+        </footer>
+    </div>
+</body>
+</html>
+    
