@@ -267,8 +267,25 @@
             });
 
             const noResults = document.getElementById('no-results');
-            if (noResults) noResults.style.display = hasResults ? 'none' : 'block';
-            if (resetBlock) resetBlock.style.display = isSearching ? 'block' : 'none';
+            if (noResults) {
+                if (hasResults) {
+                    noResults.classList.add('d-none');
+                    noResults.style.display = 'none';
+                } else {
+                    noResults.classList.remove('d-none');
+                    noResults.style.display = 'block';
+                }
+            }
+
+            if (resetBlock) {
+                if (isSearching) {
+                    resetBlock.classList.remove('d-none');
+                    resetBlock.style.display = 'block';
+                } else {
+                    resetBlock.classList.add('d-none');
+                    resetBlock.style.display = 'none';
+                }
+            }
 
             if (isSearching) {
                 document.getElementById('listings')?.scrollIntoView({ behavior: 'smooth' });
